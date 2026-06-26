@@ -279,7 +279,7 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <div class="section-dot active" data-section="home" data-label="Home"></div>
 <div class="section-dot" data-section="about" data-label="About"></div>
 <div class="section-dot" data-section="skills" data-label="Skills"></div>
-<div class="section-dot" data-section="platform" data-label="Platform"></div>
+<div class="section-dot" data-section="platform" data-label="Featured Work"></div>
 <div class="section-dot" data-section="projects" data-label="Projects"></div>
 <div class="section-dot" data-section="code" data-label="Code"></div>
 <div class="section-dot" data-section="achievements" data-label="Achievements"></div>
@@ -294,7 +294,7 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <li><a href="#home" class="active">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
-<li><a href="#platform">Platform</a></li>
+<li><a href="#platform">Featured Work</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#code">Code</a></li>
 <li><a href="#achievements">Achievements</a></li>
@@ -308,11 +308,11 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section class="hero" id="home">
 <canvas id="heroCanvas"></canvas>
 <div class="hero-content">
-<div class="hero-badge"><span class="dot"></span> Open to Work</div>
+<div class="hero-badge"><span class="dot"></span> Open to DevOps Opportunities</div>
 <h1>Hi, I'm <span class="gradient-text">Supreeth Bhat</span></h1>
 <p class="hero-tagline" id="heroTagline"></p>
 <div class="hero-cta">
-<a href="#platform" class="btn btn-primary"><span>Explore the Platform</span></a>
+<a href="#platform" class="btn btn-primary"><span>See My Work</span></a>
 <a href="resume.html" class="btn btn-resume"><span>View Resume</span></a>
 <a href="#contact" class="btn btn-secondary"><span>Get in Touch</span></a>
 </div>
@@ -390,7 +390,7 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 </div>
 </div>
 <div class="quick-facts reveal">
-<div class="fact"><span class="num">4</span><span class="label">DevOps Phases Built</span></div>
+<div class="fact"><span class="num">4</span><span class="label">Project Phases Built</span></div>
 <div class="fact"><span class="num">GitOps</span><span class="label">ArgoCD Deployed</span></div>
 <div class="fact"><span class="num">Davangere</span><span class="label">Based In</span></div>
 <div class="fact"><span class="num">24/7</span><span class="label">On-Call Mindset</span></div>
@@ -401,13 +401,13 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section id="platform">
 <div class="container">
 <div class="section-header reveal">
-<h2>DevOps Infinity Platform</h2>
-<p>A production-grade platform I built progressively from a basic CI/CD pipeline to a full enterprise-level stack.</p>
+<h2>Featured DevOps Project</h2>
+<p>The project that best represents how I learn, build, debug, document, and improve real cloud infrastructure.</p>
 <div class="divider"></div>
 </div>
 <div class="platform-hero reveal">
-<h3>From Flask on EC2 to GitOps on Kubernetes</h3>
-<p>This is not a tutorial project. I built this platform in 4 distinct phases, each adding real production capabilities. It started with a simple Python Flask app and ended with a fully observable, secure, auto-scaling Kubernetes deployment managed by ArgoCD with canary releases, chaos engineering, and HashiCorp Vault.</p>
+<h3>My hands-on journey from Flask on EC2 to GitOps on Kubernetes</h3>
+<p>This is the project I use to show how I think as an engineer. I started small with a Python Flask app, containerized it, automated deployments, moved it to Kubernetes, and then kept adding the things I care about: GitOps, monitoring, security checks, canary releases, tracing, chaos testing, and secrets management.</p>
 <div class="platform-meta">
 <div class="meta-item"><span class="dot"></span> 4 Progressive Phases</div>
 <div class="meta-item"><span class="dot"></span> AWS + Civo Cloud</div>
@@ -937,7 +937,7 @@ draw();
 
 /* Hero Typing Effect */
 const taglineEl=document.getElementById('heroTagline');
-const taglineText="I am the kind of person who learns by breaking things and then fixing them better. Cloud & DevOps engineer from Davangere who builds infrastructure that doesn't break at 2 AM.";
+const taglineText="I am Supreeth — a Cloud & DevOps engineer from Davangere who learns by building, breaking, fixing, and documenting systems until they are reliable enough for real users.";
 let ti=0;
 function typeHero(){if(ti<taglineText.length){taglineEl.innerHTML=taglineText.substring(0,ti+1)+'<span class="typing-cursor"></span>';ti++;setTimeout(typeHero,25)}else{taglineEl.innerHTML=taglineText+'<span class="typing-cursor"></span>'}}
 setTimeout(typeHero,600);
