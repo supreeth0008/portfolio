@@ -232,6 +232,10 @@ section{padding:7rem 2rem;position:relative}
 .contact-form textarea{min-height:120px;resize:vertical}
 .contact-form button{align-self:flex-start}
 .form-note{color:var(--text-muted);font-size:0.78rem;line-height:1.5}.form-note a{color:var(--primary);font-weight:600}
+.form-status{display:none;border-radius:var(--r);padding:0.85rem 1rem;font-size:0.84rem;line-height:1.5;border:1px solid var(--border)}
+.form-status.visible{display:block}.form-status.success{background:rgba(0,212,170,0.09);border-color:rgba(0,212,170,0.28);color:var(--primary)}
+.form-status.error{background:rgba(248,113,113,0.08);border-color:rgba(248,113,113,0.25);color:#fecaca}.form-status a{color:inherit;font-weight:700;text-decoration:underline}
+.contact-form button[disabled]{opacity:0.7;cursor:not-allowed;transform:none}
 
 .modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.3s}
 .modal.active{display:flex;opacity:1}
@@ -847,7 +851,7 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <div class="container">
 <div class="section-header reveal">
 <h2>Let's Connect</h2>
-<p>I reply faster than your average CI/CD pipeline. No vague recruiters please.</p>
+<p>Want to discuss a role, collaboration, or project? Send a message and I will get back to you.</p>
 <div class="divider"></div>
 </div>
 <div class="contact-grid reveal">
@@ -866,26 +870,28 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 </div>
 <div class="contact-item">
 <div class="icon-box">G</div>
-<div><a href="https://github.com/supreeth0008" target="_blank" rel="noopener noreferrer">github.com/supreeth0008</a><div class="sub">Where the real work lives</div></div>
+<div><a href="https://github.com/supreeth0008" target="_blank" rel="noopener noreferrer">github.com/supreeth0008</a><div class="sub">Project code and experiments</div></div>
 </div>
 <div class="resume-card">
 <h4>Need the short version?</h4>
-<p>I added a clean, printable resume page built from this portfolio so recruiters can quickly scan skills, projects, education, and experience.</p>
+<p>A clean, printable resume page is available for recruiters and collaborators who want a quick overview of my skills, projects, education, and experience.</p>
 <a href="resume.html" class="btn btn-resume"><span>Open Resume</span></a>
 </div>
 </div>
 <div class="contact-card">
-<form class="contact-form" id="contactForm" action="https://formsubmit.co/csbhatt719@gmail.com" method="POST">
+<form class="contact-form" id="contactForm" action="https://formsubmit.co/csbhatt719@gmail.com" method="POST" data-endpoint="https://formsubmit.co/ajax/csbhatt719@gmail.com">
 <input type="hidden" name="_subject" value="New portfolio contact message">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_next" value="https://supreeth0008.github.io/portfolio/#contact">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="text" name="subject" placeholder="Subject">
-<textarea name="message" placeholder="Your Message..." required></textarea>
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+<input type="text" name="name" placeholder="Your Name" autocomplete="name" required minlength="2" maxlength="80">
+<input type="email" name="email" placeholder="Your Email" autocomplete="email" required maxlength="120">
+<input type="text" name="subject" placeholder="Subject" maxlength="120">
+<textarea name="message" placeholder="Your Message..." required minlength="10" maxlength="2000"></textarea>
 <button type="submit" class="btn btn-primary"><span>Send Message</span></button>
-<p class="form-note">This sends your message directly to my email. If your browser blocks the submit, email me at <a href="mailto:csbhatt719@gmail.com">csbhatt719@gmail.com</a>.</p>
+<div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+<p class="form-note">Messages are sent to <a href="mailto:csbhatt719@gmail.com">csbhatt719@gmail.com</a>. If the form service is unavailable, the page will give you a direct email fallback.</p>
 </form>
 </div>
 </div>
@@ -997,6 +1003,55 @@ navigator.clipboard.writeText(text).then(()=>{btn.textContent='Copied!';btn.clas
 function openModal(src){event.stopPropagation();document.getElementById('modalImg').src=src;document.getElementById('imgModal').classList.add('active');document.body.style.overflow='hidden'}
 function closeModal(){document.getElementById('imgModal').classList.remove('active');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* Contact form: AJAX submit with direct email fallback */
+const contactForm=document.getElementById('contactForm');
+const formStatus=document.getElementById('formStatus');
+function setFormStatus(type,message){
+if(!formStatus)return;
+formStatus.className='form-status visible '+type;
+formStatus.innerHTML=message;
+}
+function buildMailto(form){
+const data=new FormData(form);
+const name=(data.get('name')||'').toString().trim();
+const email=(data.get('email')||'').toString().trim();
+const subject=(data.get('subject')||`Portfolio message from ${name||'website visitor'}`).toString().trim();
+const message=(data.get('message')||'').toString().trim();
+const body=`Name: ${name}
+Email: ${email}
+
+${message}`;
+return `mailto:csbhatt719@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+if(contactForm){
+contactForm.addEventListener('submit',async e=>{
+e.preventDefault();
+if(!contactForm.checkValidity()){contactForm.reportValidity();return;}
+const btn=contactForm.querySelector('button[type="submit"]');
+const label=btn?btn.querySelector('span'):null;
+const original=label?label.textContent:'Send Message';
+const mailto=buildMailto(contactForm);
+try{
+if(btn)btn.disabled=true;if(label)label.textContent='Sending...';
+setFormStatus('success','Sending your message...');
+const response=await fetch(contactForm.dataset.endpoint,{method:'POST',body:new FormData(contactForm),headers:{'Accept':'application/json'}});
+let result={};
+try{result=await response.json()}catch{}
+if(response.ok&&(result.success===true||result.success==='true')){
+contactForm.reset();
+setFormStatus('success','Thanks — your message was sent successfully. I will get back to you soon.');
+}else{
+const serviceMessage=(result.message||'The form service could not confirm delivery.').toString();
+setFormStatus('error',`I could not confirm delivery through the embedded form. <a href="${mailto}">Send the same message by email</a>. <br><small>${serviceMessage}</small>`);
+}
+}catch(err){
+setFormStatus('error',`Network issue while sending. <a href="${mailto}">Open an email draft instead</a>.`);
+}finally{
+if(btn)btn.disabled=false;if(label)label.textContent=original;
+}
+});
+}
 
 /* Smooth anchor scroll */
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){const target=document.querySelector(this.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'})}}));
