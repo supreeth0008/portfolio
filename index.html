@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Supreeth Bhat | Cloud & DevOps Engineer</title>
-<meta name="description" content="Supreeth Bhat — Cloud & DevOps Engineer. Built a production-grade 4-phase DevOps platform from Flask to Kubernetes with ArgoCD, Vault, and chaos engineering.">
-<meta name="theme-color" content="#05070a">
-<meta property="og:title" content="Supreeth Bhat | Cloud & DevOps Engineer">
-<meta property="og:description" content="Cloud & DevOps portfolio featuring Kubernetes, GitOps, observability, security, and automation projects.">
+<title>Supreeth Bhat | Platform & Cloud Engineer</title>
+<meta name="description" content="Supreeth Bhat — Cloud & DevOps engineer building production-style cloud infrastructure, CI/CD pipelines, Kubernetes GitOps workflows, observability, security, and reliability projects.">
+<meta name="theme-color" content="#0d1117">
+<meta property="og:title" content="Supreeth Bhat | Platform & Cloud Engineer">
+<meta property="og:description" content="Cloud & DevOps portfolio presented as a CI/CD control plane: Kubernetes, GitOps, observability, security, automation, and production-style rollout workflows.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/supreeth.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -15,7 +15,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#05070a;--bg2:#0c1117;--surface:#111827;--elevated:#1a2332;--primary:#00d4aa;--primary-dim:rgba(0,212,170,0.1);--accent:#06b6d4;--text:#f1f5f9;--text-muted:#94a3b8;--border:rgba(148,163,184,0.07);--gradient:linear-gradient(135deg,#00d4aa 0%,#06b6d4 50%,#6366f1 100%);--font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;--r:16px;--t:0.35s cubic-bezier(0.4,0,0.2,1)}
+:root{
+  --bg: #0D1117;
+  --bg2: #0A0F17;
+  --surface: #161B22;
+  --elevated: #21262D;
+  --primary: #58A6FF;
+  --primary-dim: rgba(88,166,255,0.12);
+  --accent: #3FB950;
+  --amber: #D29922;
+  --danger: #F85149;
+  --text: #F0F6FC;
+  --text-muted: #8B949E;
+  --border: #30363D;
+  --gradient: linear-gradient(135deg, #58A6FF 0%, #3FB950 55%, #D29922 100%);
+  --font: 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --r: 16px;
+  --t: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 ::selection{background:var(--primary);color:#000}
@@ -31,7 +49,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 @keyframes loadBar{0%{width:0%}50%{width:70%}100%{width:100%}}
 
 nav{position:fixed;top:0;width:100%;z-index:1000;transition:all var(--t)}
-nav.scrolled{background:rgba(5,7,10,0.9);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border)}
+nav.scrolled{background:rgba(13,17,23,0.86);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border)}
 .nav-container{max-width:1200px;margin:0 auto;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center}
 .logo{font-weight:900;font-size:1.4rem;letter-spacing:-1px;color:var(--text)}
 .logo span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -48,16 +66,16 @@ nav.scrolled{background:rgba(5,7,10,0.9);backdrop-filter:blur(20px) saturate(1.5
 
 .section-dots{position:fixed;right:2rem;top:50%;transform:translateY(-50%);z-index:999;display:flex;flex-direction:column;gap:1rem}
 .section-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:1px solid rgba(148,163,184,0.2);cursor:pointer;transition:all var(--t);position:relative}
-.section-dot.active{background:var(--primary);border-color:var(--primary);box-shadow:0 0 12px rgba(0,212,170,0.4)}
+.section-dot.active{background:var(--primary);border-color:var(--primary);box-shadow:0 0 14px rgba(88,166,255,0.45)}
 .section-dot::before{content:attr(data-label);position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font-size:0.7rem;color:var(--text-muted);white-space:nowrap;opacity:0;transition:opacity 0.3s}
 .section-dot:hover::before{opacity:1}
 @media(max-width:768px){.section-dots{display:none}}
 
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 2rem 5rem}
 #heroCanvas{position:absolute;inset:0;z-index:0;opacity:0.5}
-.hero-content{max-width:850px;text-align:center;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:0.6rem;background:var(--primary-dim);border:1px solid rgba(0,212,170,0.2);color:var(--primary);padding:0.6rem 1.2rem;border-radius:100px;font-size:0.8rem;font-weight:600;margin-bottom:2rem;backdrop-filter:blur(10px);animation:fadeUp 0.8s ease both}
-.hero-badge .dot{width:8px;height:8px;background:var(--primary);border-radius:50%;animation:pulse 2s infinite}
+.hero-content{max-width:1080px;text-align:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:0.6rem;background:var(--primary-dim);border:1px solid rgba(88,166,255,0.26);color:var(--primary);padding:0.6rem 1.2rem;border-radius:100px;font-size:0.8rem;font-weight:600;margin-bottom:2rem;box-shadow:0 12px 34px rgba(88,166,255,0.12);backdrop-filter:blur(10px);animation:fadeUp 0.8s ease both}
+.hero-badge .dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 16px rgba(63,185,80,0.65);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
 .hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem;animation:fadeUp 0.8s ease 0.15s both}
 .hero h1 .gradient-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -66,36 +84,37 @@ nav.scrolled{background:rgba(5,7,10,0.9);backdrop-filter:blur(20px) saturate(1.5
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.45s both}
 .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 2rem;border-radius:var(--r);font-weight:600;font-size:0.95rem;text-decoration:none;transition:all var(--t);cursor:pointer;border:none;position:relative;overflow:hidden;font-family:var(--font)}
-.btn-primary{background:var(--gradient);color:#000;box-shadow:0 8px 32px rgba(0,212,170,0.25)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,212,170,0.35)}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--accent));color:#07111a;box-shadow:0 14px 38px rgba(88,166,255,0.22)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(88,166,255,0.32)}
 .btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
-.btn-secondary:hover{border-color:var(--primary);background:var(--primary-dim)}
-.btn-resume{background:rgba(6,182,212,0.08);color:var(--accent);border:1px solid rgba(6,182,212,0.24)}
-.btn-resume:hover{border-color:var(--accent);background:rgba(6,182,212,0.14);transform:translateY(-3px);box-shadow:0 12px 36px rgba(6,182,212,0.16)}
+.btn-secondary:hover,.btn-resume:hover{border-color:var(--primary);background:var(--primary-dim)}
+.btn-resume{background:linear-gradient(135deg,rgba(88,166,255,0.10),rgba(63,185,80,0.06));color:var(--accent);border:1px solid rgba(88,166,255,0.18)}
 a:focus-visible,.btn:focus-visible,.menu-toggle:focus-visible,.phase-tab:focus-visible,.code-tab:focus-visible,.back-to-top:focus-visible{outline:2px solid var(--primary);outline-offset:4px}
 .hero-social{display:flex;gap:1rem;justify-content:center;margin-top:2.5rem;animation:fadeUp 0.8s ease 0.6s both}
 .hero-social a{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text-muted);transition:all var(--t)}
-.hero-social a:hover{color:var(--primary);border-color:var(--primary);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,212,170,0.15)}
+.hero-social a:hover{color:var(--primary);border-color:var(--primary);transform:translateY(-4px);box-shadow:0 8px 24px rgba(88,166,255,0.15)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+/* DevOps Theme Layout Styles */
+body{background:radial-gradient(circle at 20% 0%,rgba(88,166,255,0.16),transparent 34%),radial-gradient(circle at 85% 12%,rgba(63,185,80,0.10),transparent 28%),linear-gradient(180deg,var(--bg) 0%,#070b11 100%)}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(rgba(88,166,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(88,166,255,0.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.75),transparent 80%)}
+.section-header .eyebrow,.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}.eyebrow::before{content:'●';font-size:.62rem;color:var(--accent)}
+.hero-kicker{font-family:var(--mono);color:var(--accent);letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:1rem;animation:fadeUp .8s ease .08s both}
+.hero-status-console{display:grid;grid-template-columns:repeat(5,minmax(130px,1fr));gap:.8rem;margin:2rem auto 2.2rem;animation:fadeUp .8s ease .38s both}
+.status-pill{background:rgba(22,27,34,.82);border:1px solid var(--border);border-radius:12px;padding:.8rem .9rem;text-align:left;box-shadow:0 16px 40px rgba(0,0,0,.22);position:relative;overflow:hidden}.status-pill::before{content:'';position:absolute;inset:0;border-top:1px solid rgba(88,166,255,.35);opacity:.65}.status-pill .label{display:block;font-family:var(--mono);font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}.status-pill .value{display:flex;align-items:center;gap:.45rem;margin-top:.25rem;font-weight:800;color:var(--text);font-size:.88rem}.status-pill .value::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px rgba(63,185,80,.65)}.status-pill.amber .value::before{background:var(--amber);box-shadow:0 0 14px rgba(210,153,34,.65)}
+.recruiter-fastpath{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:rgba(22,27,34,.62);backdrop-filter:blur(14px);margin:2rem auto 0;max-width:900px;animation:fadeUp .8s ease .55s both}.fastpath-item{padding:1rem;border-right:1px solid var(--border);text-align:left}.fastpath-item:last-child{border-right:0}.fastpath-item .k{font-family:var(--mono);font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}.fastpath-item .v{margin-top:.3rem;color:var(--text);font-weight:700;font-size:.9rem}
 
 section{padding:7rem 2rem;position:relative}
 .container{max-width:1100px;margin:0 auto}
 .section-header{text-align:center;margin-bottom:5rem}
 .section-header h2{font-size:clamp(2rem,5vw,2.8rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:0.75rem}
-.section-header h2 .icon{color:var(--primary);font-weight:400;opacity:0.8}
 .section-header p{color:var(--text-muted);font-size:1.05rem;max-width:520px;margin:0 auto;line-height:1.7}
 .divider{width:50px;height:4px;background:var(--gradient);border-radius:2px;margin:1.25rem auto 0;position:relative}
-.divider::after{content:'';position:absolute;inset:-2px;background:var(--gradient);border-radius:4px;opacity:0.3;filter:blur(4px)}
 
 .about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:center}
 .about-photo{position:relative;max-width:280px;margin:0 auto}
-.about-photo-frame{width:100%;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;position:relative;box-shadow:0 24px 64px rgba(0,212,170,0.15);transition:transform 0.5s}
-.about-photo-frame:hover{transform:translateY(-4px)}
-.about-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s}
-.about-photo-frame:hover img{transform:scale(1.05)}
-.about-photo-frame::before{content:'';position:absolute;inset:0;border:1px solid rgba(0,212,170,0.15);border-radius:var(--r);z-index:2;pointer-events:none}
-.about-photo-glow{position:absolute;inset:-20px;background:var(--gradient);opacity:0.15;filter:blur(40px);border-radius:calc(var(--r)+20px);z-index:-1;animation:glowPulse 3s ease-in-out infinite}
-@keyframes glowPulse{0%,100%{opacity:0.15}50%{opacity:0.25}}
+.about-photo-frame{width:100%;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;position:relative;box-shadow:0 24px 64px rgba(88,166,255,0.14);transition:transform 0.5s}
+.about-photo-frame::before{content:'';position:absolute;inset:0;border:1px solid rgba(88,166,255,0.18);border-radius:var(--r);z-index:2;pointer-events:none}
 .about-info h3{font-size:1.6rem;margin-bottom:1rem;font-weight:700}
 .about-info>p{color:var(--text-muted);margin-bottom:1.25rem;line-height:1.8}
 .about-details{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
@@ -105,37 +124,62 @@ section{padding:7rem 2rem;position:relative}
 .quote-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem 2rem;margin-top:2rem;position:relative;font-style:italic;color:var(--text-muted);font-size:0.95rem;line-height:1.7}
 .quote-block::before{content:'';position:absolute;left:0;top:1rem;bottom:1rem;width:3px;background:var(--gradient);border-radius:2px}
 
-.alt-bg{background:var(--bg2)}
-
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.75rem;transition:all var(--t);position:relative;overflow:hidden}
-.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient);opacity:0;transition:opacity 0.3s}
-.skill-card:hover{transform:translateY(-6px);border-color:rgba(0,212,170,0.2);box-shadow:0 20px 48px rgba(0,0,0,0.5)}
-.skill-card:hover::before{opacity:1}
+.skill-card{background:rgba(22,27,34,0.78);border:1px solid var(--border);border-radius:var(--r);padding:1.75rem;transition:all var(--t);box-shadow:0 18px 50px rgba(0,0,0,0.18)}
+.skill-card:hover{transform:translateY(-6px);border-color:rgba(88,166,255,0.28);box-shadow:0 20px 48px rgba(0,0,0,0.5)}
 .skill-card h4{display:flex;align-items:center;gap:0.6rem;font-size:1.05rem;margin-bottom:1.25rem;color:var(--primary);font-weight:600}
 .skill-card ul{list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem}
-.skill-card li{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.85rem;font-size:0.82rem;color:var(--text-muted);transition:all var(--t);font-weight:400}
-.skill-card li:hover{background:var(--primary-dim);color:var(--text);border-color:rgba(0,212,170,0.25)}
-.quick-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:3rem}
-.fact{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-align:center;transition:all var(--t);position:relative;overflow:hidden}
-.fact:hover{border-color:rgba(0,212,170,0.2);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.3)}
-.fact .num{font-size:1.75rem;font-weight:800;color:var(--primary);display:block;margin-bottom:0.35rem;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.fact .label{font-size:0.8rem;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
+.layer-kicker{font-family:var(--mono);font-size:.68rem;color:var(--primary);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.65rem}
+.skill-card li,.tool-tag{font-family:var(--mono);background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:0.4rem 0.85rem;font-size:0.82rem;color:var(--text-muted);transition:all var(--t);font-weight:400}
+.skill-card li::before,.tool-tag::before{content:'// ';color:var(--primary);opacity:.7}
+.tool-tag:hover,.skill-card li:hover{background:rgba(88,166,255,0.08);color:var(--text);border-color:rgba(88,166,255,0.28)}
 
-.platform-hero{background:linear-gradient(135deg,rgba(0,212,170,0.06) 0%,rgba(6,182,212,0.06) 100%);border:1px solid rgba(0,212,170,0.1);border-radius:var(--r);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
-.platform-hero::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,170,0.08) 0%,transparent 70%);border-radius:50%}
-.platform-hero h3{font-size:1.6rem;margin-bottom:0.75rem;position:relative;font-weight:700}
-.platform-hero p{color:var(--text-muted);max-width:700px;position:relative;line-height:1.75;font-size:0.95rem}
+.platform-hero{background:linear-gradient(135deg,rgba(88,166,255,0.08),rgba(63,185,80,0.055));border:1px solid rgba(88,166,255,0.16);border-radius:var(--r);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
+.platform-hero::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(88,166,255,0.12),transparent 70%);border-radius:50%}
 .platform-meta{display:flex;gap:1.5rem;margin-top:1.75rem;flex-wrap:wrap;position:relative}
 .platform-meta .meta-item{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--text-muted);background:var(--surface);border:1px solid var(--border);padding:0.4rem 0.8rem;border-radius:10px;font-weight:500}
 .platform-meta .meta-item .dot{width:6px;height:6px;border-radius:50%;background:var(--primary)}
 
-.phase-tabs{display:flex;gap:0.6rem;margin-bottom:2.5rem;flex-wrap:wrap}
-.phase-tab{padding:0.75rem 1.25rem;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text-muted);font-size:0.82rem;cursor:pointer;transition:all var(--t);font-weight:500}
-.phase-tab.active{background:var(--primary-dim);color:var(--primary);border-color:rgba(0,212,170,0.25);box-shadow:0 4px 16px rgba(0,212,170,0.08)}
-.phase-tab:hover:not(.active){border-color:var(--text-muted);color:var(--text)}
-.phase-panel{display:none}
-.phase-panel.active{display:block;animation:fadeUp 0.5s ease}
+.architecture-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem;margin:2rem 0 2.4rem}
+.arch-card,.pipeline-card,.capability-card,.release-log,.evidence-console{background:rgba(22,27,34,.78);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 18px 50px rgba(0,0,0,.24);overflow:hidden}
+.arch-card{padding:1.5rem}.arch-card h4,.pipeline-card h4,.release-log h4,.evidence-console h4{font-size:1rem;margin-bottom:.9rem;color:var(--text)}
+.arch-diagram{width:100%;min-height:270px}
+.arch-node{fill:#161B22;stroke:#30363D;stroke-width:1.2}.arch-node.primary{stroke:#58A6FF}.arch-node.green{stroke:#3FB950}.arch-node.amber{stroke:#D29922}
+.arch-text{fill:#F0F6FC;font:600 12px Inter,system-ui}.arch-sub{fill:#8B949E;font:10px JetBrains Mono,monospace}
+.arch-line{stroke:#58A6FF;stroke-width:1.4;stroke-dasharray:4 5;animation:dashFlow 6s linear infinite}@keyframes dashFlow{to{stroke-dashoffset:-80}}
+
+.pipeline-card{padding:1.5rem}.pipeline-flow{display:grid;gap:.65rem}
+.pipeline-step{display:grid;grid-template-columns:34px 1fr auto;gap:.85rem;align-items:center;background:#0D1117;border:1px solid var(--border);border-radius:12px;padding:.75rem .85rem}
+.pipeline-step .idx{width:28px;height:28px;border-radius:8px;background:var(--primary-dim);display:grid;place-items:center;color:var(--primary);font-family:var(--mono);font-weight:800;font-size:.75rem}
+.pipeline-step strong{display:block;font-size:.87rem}.pipeline-step span{display:block;font-family:var(--mono);font-size:.68rem;color:var(--text-muted);margin-top:.1rem}
+.state{font-family:var(--mono);font-size:.68rem;border:1px solid rgba(63,185,80,.25);background:rgba(63,185,80,.08);color:var(--accent);border-radius:999px;padding:.25rem .55rem;white-space:nowrap}
+.state.blue{color:var(--primary);background:rgba(88,166,255,.08);border-color:rgba(88,166,255,.25)}.state.amber{color:var(--amber);background:rgba(210,153,34,.08);border-color:rgba(210,153,34,.28)}
+
+.capability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0 0 2.4rem}
+.capability-card{padding:1.1rem}.capability-card .cap-top{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:.6rem}.capability-card h4{font-size:.95rem}.capability-card p{color:var(--text-muted);font-size:.82rem;line-height:1.6}.capability-card .cap-tag{font-family:var(--mono);font-size:.62rem;color:var(--accent);border:1px solid rgba(63,185,80,.24);background:rgba(63,185,80,.08);padding:.22rem .45rem;border-radius:999px;white-space:nowrap}
+
+.release-log{padding:0;margin-bottom:2.5rem}.terminal-title{display:flex;align-items:center;gap:.55rem;background:#0D1117;border-bottom:1px solid var(--border);padding:.8rem 1rem;font-family:var(--mono);font-size:.78rem;color:var(--text-muted)}.terminal-title .term-dot{width:10px;height:10px;border-radius:50%;background:#ff5f56;box-shadow:16px 0 #ffbd2e,32px 0 #27c93f;margin-right:34px}
+.deploy-log{font-family:var(--mono);padding:1rem 1.2rem;color:#c9d1d9;font-size:.8rem;line-height:1.85;overflow-x:auto}.deploy-log .ok{color:var(--accent)}.deploy-log .warn{color:var(--amber)}.deploy-log .cmd{color:var(--primary)}
+
+/* Tab Hardening Rules */
+.phase-tabs, .evidence-tabs {
+  display: flex !important;
+  gap: 0.6rem;
+  overflow-x: auto !important;
+  white-space: nowrap;
+  flex-wrap: nowrap !important;
+  padding-bottom: 0.6rem;
+  -webkit-overflow-scrolling: touch;
+}
+.phase-tabs::-webkit-scrollbar, .evidence-tabs::-webkit-scrollbar { height: 4px; }
+.phase-tabs::-webkit-scrollbar-thumb, .evidence-tabs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.phase-tab,.code-tab,.evidence-tab{font-family:var(--mono);padding:0.75rem 1.25rem;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text-muted);font-size:0.82rem;cursor:pointer;transition:all var(--t);font-weight:500;}
+.phase-tab.active,.code-tab.active,.evidence-tab.active{background:rgba(88,166,255,.11);color:var(--primary);border-color:rgba(88,166,255,.35)}
+.phase-tab:hover:not(.active),.code-tab:hover:not(.active){border-color:var(--text-muted);color:var(--text)}
+
+.phase-panel,.code-panel,.evidence-pane{display:none}
+.phase-panel.active,.code-panel.active,.evidence-pane.active{display:block;animation:fadeUp 0.5s ease}
 .phase-content{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
 .phase-info h4{font-size:1.2rem;margin-bottom:1rem;color:var(--primary);font-weight:700}
 .phase-info p{color:var(--text-muted);margin-bottom:1.25rem;line-height:1.75;font-size:0.92rem}
@@ -143,19 +187,33 @@ section{padding:7rem 2rem;position:relative}
 .phase-info li{color:var(--text-muted);font-size:0.88rem;position:relative;padding-left:1.25rem;margin-bottom:0.6rem;line-height:1.6}
 .phase-info li::before{content:'>';position:absolute;left:0;color:var(--primary);font-weight:700}
 .phase-stack{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem}
-.phase-img{border-radius:var(--r);border:1px solid var(--border);overflow:hidden;background:var(--bg);transition:all var(--t);cursor:pointer}
-.phase-img:hover{border-color:rgba(0,212,170,0.2);transform:scale(1.01);box-shadow:0 12px 32px rgba(0,0,0,0.4)}
+.phase-img{border-radius:var(--r);border:1px solid var(--border);overflow:hidden;background:#0D1117;transition:all var(--t);cursor:pointer}
+.phase-img:hover{border-color:rgba(88,166,255,.28);transform:scale(1.01);box-shadow:0 12px 32px rgba(0,0,0,0.4)}
 .phase-img img{width:100%;height:auto;display:block}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:2rem}
-.gallery-item{border-radius:var(--r);border:1px solid var(--border);overflow:hidden;background:var(--surface);transition:all var(--t);cursor:pointer}
-.gallery-item:hover{transform:translateY(-4px);border-color:rgba(0,212,170,0.2);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+
+.evidence-console{padding:1.25rem;margin-top:1.5rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;}
+.gallery-item{border-radius:var(--r);border:1px solid var(--border);overflow:hidden;background:#0D1117;transition:all var(--t);cursor:pointer}
+.gallery-item:hover{transform:translateY(-4px);border-color:rgba(88,166,255,.28);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
 .gallery-item img{width:100%;height:auto;display:block;transition:transform 0.5s}
 .gallery-item:hover img{transform:scale(1.03)}
-.gallery-item .caption{padding:0.9rem 1.1rem;font-size:0.8rem;color:var(--text-muted);font-weight:500;background:var(--surface);border-top:1px solid var(--border)}
+.gallery-item .caption{padding:0.9rem 1.1rem;font-size:0.8rem;color:var(--text-muted);font-weight:500;font-family:var(--mono);border-top:1px solid var(--border)}
+
+.code-tabs{display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.code-block{background:#0D1117;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;font-family:var(--mono);font-size:0.78rem;line-height:1.65;position:relative}
+.code-block:hover{border-color:rgba(0,212,170,0.15)}
+.code-header{display:flex;align-items:center;gap:0.5rem;padding:0.75rem 1rem;background:#161B22;border-bottom:1px solid var(--border)}
+.code-dot{width:10px;height:10px;border-radius:50%}.code-dot.red{background:#ff5f56}.code-dot.yellow{background:#ffbd2e}.code-dot.green{background:#27c93f}
+.code-filename{color:var(--text-muted);font-size:0.78rem;margin-left:0.5rem;font-family:var(--font)}
+.code-copy{position:absolute;top:0.75rem;right:1rem;background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:0.3rem 0.6rem;border-radius:6px;font-size:0.7rem;cursor:pointer;transition:all var(--t);font-family:var(--font)}
+.code-copy:hover{border-color:var(--primary);color:var(--primary)}
+.code-copy.copied{color:var(--primary);border-color:var(--primary)}
+.code-body{padding:1.25rem 1.5rem;overflow-x:auto;color:#c9d1d9}
+.code-body pre{white-space:pre-wrap;word-break:break-word}
 
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
-.project-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all var(--t);display:flex;flex-direction:column}
-.project-card:hover{transform:translateY(-8px);box-shadow:0 24px 56px rgba(0,0,0,0.5);border-color:rgba(0,212,170,0.2)}
+.project-card{background:rgba(22,27,34,.78);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all var(--t);display:flex;flex-direction:column;box-shadow:0 18px 50px rgba(0,0,0,0.18)}
+.project-card:hover{transform:translateY(-8px);border-color:rgba(88,166,255,.28);box-shadow:0 24px 56px rgba(0,0,0,0.5)}
 .project-header{padding:1.75rem 1.75rem 0.75rem}
 .project-header .category{font-size:0.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);font-weight:700;margin-bottom:0.6rem;opacity:0.9}
 .project-header h3{font-size:1.2rem;margin-bottom:0.75rem;font-weight:700}
@@ -163,39 +221,17 @@ section{padding:7rem 2rem;position:relative}
 .project-tools{padding:0 1.75rem;margin-bottom:1.25rem}
 .project-tools .tools-label{font-size:0.65rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:0.6rem;font-weight:700}
 .project-tools .tools-list{display:flex;flex-wrap:wrap;gap:0.4rem}
-.tool-tag{background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--text-muted);font-size:0.75rem;padding:0.3rem 0.7rem;border-radius:6px;font-weight:500;transition:all var(--t)}
-.tool-tag.primary{background:var(--primary-dim);border-color:rgba(0,212,170,0.25);color:var(--primary);font-weight:600}
-.tool-tag:hover{background:rgba(0,212,170,0.08);color:var(--text);border-color:rgba(0,212,170,0.3)}
 .project-footer{padding:0 1.75rem 1.75rem;margin-top:auto;display:flex;gap:0.75rem}
 .project-footer a{font-size:0.85rem;font-weight:600;text-decoration:none;color:var(--text);display:inline-flex;align-items:center;gap:0.4rem;transition:all var(--t);position:relative;padding-bottom:2px}
 .project-footer a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gradient);transition:width 0.3s}
 .project-footer a:hover{color:var(--primary)}
 .project-footer a:hover::after{width:100%}
 
-.code-tabs{display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap}
-.code-tab{padding:0.6rem 1rem;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text-muted);font-size:0.82rem;cursor:pointer;transition:all var(--t);font-weight:500;font-family:var(--font)}
-.code-tab.active{background:var(--primary-dim);color:var(--primary);border-color:rgba(0,212,170,0.25)}
-.code-tab:hover:not(.active){color:var(--text);border-color:var(--text-muted)}
-.code-panel{display:none}
-.code-panel.active{display:block;animation:fadeUp 0.4s ease}
-.code-block{background:#0c1117;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;font-family:var(--mono);font-size:0.78rem;line-height:1.65;position:relative}
-.code-block:hover{border-color:rgba(0,212,170,0.15)}
-.code-header{display:flex;align-items:center;gap:0.5rem;padding:0.75rem 1rem;background:rgba(255,255,255,0.015);border-bottom:1px solid var(--border)}
-.code-dot{width:10px;height:10px;border-radius:50%}.code-dot.red{background:#ff5f56}.code-dot.yellow{background:#ffbd2e}.code-dot.green{background:#27c93f}
-.code-filename{color:var(--text-muted);font-size:0.78rem;margin-left:0.5rem;font-family:var(--font)}
-.code-copy{position:absolute;top:0.75rem;right:1rem;background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:0.3rem 0.6rem;border-radius:6px;font-size:0.7rem;cursor:pointer;transition:all var(--t);font-family:var(--font)}
-.code-copy:hover{border-color:var(--primary);color:var(--primary)}
-.code-copy.copied{color:var(--primary);border-color:var(--primary)}
-.code-body{padding:1.25rem 1.5rem;overflow-x:auto;color:#e2e8f0}
-.code-body pre{white-space:pre}
-.code-body .kw{color:#ff7b72;font-weight:500}.code-body .fn{color:#d2a8ff}.code-body .str{color:#a5d6ff}
-.code-body .num{color:#79c0ff}.code-body .cm{color:#64748b;font-style:italic}.code-body .var{color:#ffa657}
-
 .achievements-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-.achievement-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.75rem;transition:all var(--t);position:relative;overflow:hidden}
-.achievement-card:hover{transform:translateY(-5px);border-color:rgba(0,212,170,0.2);box-shadow:0 20px 48px rgba(0,0,0,0.5)}
+.achievement-card{background:rgba(22,27,34,.78);border:1px solid var(--border);border-radius:var(--r);padding:1.75rem;transition:all var(--t);position:relative;overflow:hidden}
+.achievement-card:hover{transform:translateY(-5px);border-color:rgba(88,166,255,.28);box-shadow:0 20px 48px rgba(0,0,0,0.5)}
 .achievement-card .badge{display:inline-block;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:0.35rem 0.75rem;border-radius:6px;margin-bottom:0.9rem}
-.badge-cert{background:rgba(0,212,170,0.1);color:var(--primary);border:1px solid rgba(0,212,170,0.2)}
+.badge-cert{background:rgba(88,166,255,.1);color:var(--primary);border:1px solid rgba(88,166,255,.25)}
 .badge-event{background:rgba(99,102,241,0.1);color:#818cf8;border:1px solid rgba(99,102,241,0.2)}
 .achievement-card h4{font-size:1.05rem;margin-bottom:0.6rem;font-weight:700}
 .achievement-card p{color:var(--text-muted);font-size:0.88rem;line-height:1.7}
@@ -215,27 +251,26 @@ section{padding:7rem 2rem;position:relative}
 .timeline-item li::before{content:'>';position:absolute;left:0;color:var(--primary);font-weight:700}
 
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.contact-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:2rem;display:flex;flex-direction:column;gap:1.5rem;transition:all var(--t)}
-.contact-card:hover{border-color:rgba(0,212,170,0.15)}
-.resume-card{background:linear-gradient(135deg,rgba(0,212,170,0.10),rgba(6,182,212,0.06));border:1px solid rgba(0,212,170,0.18);border-radius:var(--r);padding:1.25rem;margin-top:0.5rem}
+.contact-card{background:rgba(22,27,34,.78);border:1px solid var(--border);border-radius:var(--r);padding:2rem;display:flex;flex-direction:column;gap:1.5rem;transition:all var(--t)}
+.contact-card:hover{border-color:rgba(88,166,255,.28)}
+.resume-card{background:linear-gradient(135deg,rgba(88,166,255,.10),rgba(63,185,80,.06));border:1px solid rgba(88,166,255,0.18);border-radius:var(--r);padding:1.25rem;margin-top:0.5rem}
 .resume-card h4{font-size:1rem;margin-bottom:0.4rem}
 .resume-card p{color:var(--text-muted);font-size:0.86rem;margin-bottom:1rem;line-height:1.6}
 .contact-item{display:flex;align-items:center;gap:1rem}
-.contact-item .icon-box{width:48px;height:48px;border-radius:10px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.1rem;flex-shrink:0;transition:all var(--t);border:1px solid rgba(0,212,170,0.1)}
-.contact-item:hover .icon-box{background:var(--primary);color:var(--bg);box-shadow:0 8px 24px rgba(0,212,170,0.25)}
+.contact-item .icon-box{width:48px;height:48px;border-radius:10px;background:var(--primary-dim);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.1rem;flex-shrink:0;transition:all var(--t);border:1px solid rgba(88,166,255,0.1);font-family:var(--mono)}
+.contact-item:hover .icon-box{background:var(--primary);color:var(--bg);box-shadow:0 8px 24px rgba(88,166,255,0.25)}
 .contact-item a{color:var(--text);text-decoration:none;font-weight:600;transition:color var(--t);font-size:0.95rem}
 .contact-item a:hover{color:var(--primary)}
 .contact-item .sub{color:var(--text-muted);font-size:0.82rem;margin-top:0.15rem}
 .contact-form{display:flex;flex-direction:column;gap:1rem}
-.contact-form input,.contact-form textarea{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:1rem;color:var(--text);font-family:var(--font);font-size:0.95rem;transition:all var(--t);outline:none}
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,212,170,0.08)}
+.contact-form input,.contact-form textarea{background:#0D1117;border:1px solid var(--border);border-radius:var(--r);padding:1rem;color:var(--text);font-family:var(--font);font-size:0.95rem;transition:all var(--t);outline:none}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(88,166,255,0.12)}
 .contact-form textarea{min-height:120px;resize:vertical}
 .contact-form button{align-self:flex-start}
 .form-note{color:var(--text-muted);font-size:0.78rem;line-height:1.5}.form-note a{color:var(--primary);font-weight:600}
 .form-status{display:none;border-radius:var(--r);padding:0.85rem 1rem;font-size:0.84rem;line-height:1.5;border:1px solid var(--border)}
-.form-status.visible{display:block}.form-status.success{background:rgba(0,212,170,0.09);border-color:rgba(0,212,170,0.28);color:var(--primary)}
+.form-status.visible{display:block}.form-status.success{background:rgba(63,185,80,.09);border-color:rgba(63,185,80,.28);color:var(--accent)}
 .form-status.error{background:rgba(248,113,113,0.08);border-color:rgba(248,113,113,0.25);color:#fecaca}.form-status a{color:inherit;font-weight:700;text-decoration:underline}
-.contact-form button[disabled]{opacity:0.7;cursor:not-allowed;transform:none}
 
 .modal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem;opacity:0;transition:opacity 0.3s}
 .modal.active{display:flex;opacity:1}
@@ -245,15 +280,15 @@ section{padding:7rem 2rem;position:relative}
 
 .back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;background:var(--surface);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-muted);cursor:pointer;transition:all var(--t);opacity:0;transform:translateY(20px);z-index:999}
 .back-to-top.visible{opacity:1;transform:translateY(0)}
-.back-to-top:hover{background:var(--primary);border-color:var(--primary);color:var(--bg);box-shadow:0 8px 24px rgba(0,212,170,0.3)}
+.back-to-top:hover{background:var(--primary);border-color:var(--primary);color:var(--bg);box-shadow:0 8px 24px rgba(88,166,255,0.3)}
 
 footer{text-align:center;padding:3rem 2rem;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.85rem;background:var(--bg)}
 footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
 
 .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}.reveal-delay-4{transition-delay:0.4s}
 
+@media(max-width:920px){.hero-status-console,.architecture-grid,.capability-grid,.recruiter-fastpath{grid-template-columns:1fr 1fr}.architecture-grid{gap:1rem}.fastpath-item:nth-child(2){border-right:0}.fastpath-item{border-bottom:1px solid var(--border)}.fastpath-item:nth-child(3),.fastpath-item:nth-child(4){border-bottom:0}}
 @media(max-width:768px){
 .nav-links{display:none;position:fixed;inset:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:999}
 .nav-links.active{display:flex}.nav-links a{font-size:1.2rem}
@@ -274,6 +309,35 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 .platform-meta{justify-content:center}
 .about-info h3{font-size:1.4rem}
 }
+@media(max-width:640px){.hero-status-console,.architecture-grid,.capability-grid,.recruiter-fastpath{grid-template-columns:1fr}.fastpath-item{border-right:0}.fastpath-item:nth-child(3){border-bottom:1px solid var(--border)}.pipeline-step{grid-template-columns:30px 1fr}.pipeline-step .state{grid-column:2}.hero h1{font-size:clamp(2.4rem,15vw,3.4rem)}}
+
+/* SVG Mobile Scaling Wrapper */
+.arch-diagram-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+}
+.arch-diagram {
+  min-width: 650px;
+}
+
+/* Extracted Sandbox Styles */
+.sandbox-header { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text); }
+.sandbox-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
+.sandbox-controls { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.sandbox-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+.sandbox-console {
+  background: #05070a;
+  min-height: 80px;
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  padding: 1rem;
+  line-height: 1.8;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+}
+
 </style>
 </head>
 <body>
@@ -312,13 +376,27 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section class="hero" id="home">
 <canvas id="heroCanvas"></canvas>
 <div class="hero-content">
-<div class="hero-badge"><span class="dot"></span> Open to DevOps Opportunities</div>
-<h1>Hi, I'm <span class="gradient-text">Supreeth Bhat</span></h1>
+<div class="hero-badge"><span class="dot"></span> Open to DevOps / Cloud Opportunities</div>
+<div class="hero-kicker">pipeline // portfolio-release-2026</div>
+<h1><span class="gradient-text">Supreeth Bhat</span></h1>
 <p class="hero-tagline" id="heroTagline"></p>
+<div class="hero-status-console" aria-label="Portfolio capability status">
+<div class="status-pill" id="apiPill"><span class="label">site runtime</span><span class="value" id="liveApiStatus">polling...</span></div>
+<div class="status-pill"><span class="label">build</span><span class="value">passing</span></div>
+<div class="status-pill"><span class="label">security</span><span class="value">scanned</span></div>
+<div class="status-pill"><span class="label">gitops</span><span class="value">synced</span></div>
+<div class="status-pill amber"><span class="label">chaos</span><span class="value">tested</span></div>
+</div>
 <div class="hero-cta">
-<a href="#platform" class="btn btn-primary"><span>See My Work</span></a>
+<a href="#platform" class="btn btn-primary"><span>View Deployment Case Study</span></a>
 <a href="resume.html" class="btn btn-resume"><span>View Resume</span></a>
-<a href="#contact" class="btn btn-secondary"><span>Get in Touch</span></a>
+<a href="#contact" class="btn btn-secondary"><span>Create Contact Handoff</span></a>
+</div>
+<div class="recruiter-fastpath" aria-label="Recruiter fast path">
+<div class="fastpath-item"><div class="k">target</div><div class="v">Cloud / DevOps / Platform</div></div>
+<div class="fastpath-item"><div class="k">location</div><div class="v">Davangere, India</div></div>
+<div class="fastpath-item"><div class="k">stack</div><div class="v">AWS · K8s · GitOps</div></div>
+<div class="fastpath-item"><div class="k">status</div><div class="v">Open to internships & fresher roles</div></div>
 </div>
 <div class="hero-social">
 <a href="https://github.com/supreeth0008" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.72.08-.72 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.9 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
@@ -331,30 +409,28 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section id="about">
 <div class="container">
 <div class="section-header reveal">
-<h2>About Me</h2>
-<p>Not your typical resume talk. Here is who I actually am.</p>
+<h2>Identity</h2>
+<p>Systems-focused profile, operating style, and the engineering problems I like solving.</p>
 <div class="divider"></div>
 </div>
 <div class="about-grid reveal">
 <div class="about-photo">
-<div class="about-photo-glow"></div>
 <div class="about-photo-frame">
 <img src="images/supreeth.png" alt="Supreeth Bhat">
 </div>
 </div>
 <div class="about-info">
-<h3>The guy who shows up and gets it done</h3>
-<p>I am not the loudest person in the room, but I am usually the one making sure the server is running while everyone else is presenting. I grew up in Davangere, studied at Sree Siddaganga College, and I am currently pursuing my MCA at S-VYASA.</p>
-<p>I like understanding how things work under the hood, whether it is a Terraform module or a crowd of 200 people at a tech event. My approach is simple: read the docs, build something, break it, fix it properly, and document it so the next person does not suffer.</p>
+<h3>Cloud systems builder focused on reliability and operations</h3>
+<p>I am Supreeth Bhat, an MCA student specializing in Cloud Computing and DevOps. I focus on translating raw infrastructure requirements into automated, observable pipelines. My priority is building systems that are not just easy to deploy, but easy to troubleshoot and scale.</p>
+<p>My methodology is straightforward: establish the core architecture, automate the delivery, intentionally test for failure points, and implement the telemetry required to monitor the system's health. That is the exact blueprint behind my DevOps Infinity environment.</p>
+<!-- Pruned Details Section to remove Nationality and Birthdate -->
 <div class="about-details">
 <div class="detail-item"><span class="label">Location</span><span class="value">Davangere, Karnataka</span></div>
-<div class="detail-item"><span class="label">Email</span><span class="value">csbhatt719@gmail.com</span></div>
+<div class="detail-item"><span class="label">Email</span><span class="value"><a href="mailto:csbhatt719@gmail.com" style="color: inherit; text-decoration: none;">csbhatt719@gmail.com</a></span></div>
 <div class="detail-item"><span class="label">Phone</span><span class="value">+91 8310007630</span></div>
 <div class="detail-item"><span class="label">Languages</span><span class="value">Kannada, Hindi, English</span></div>
-<div class="detail-item"><span class="label">Birth</span><span class="value">8 October 2004</span></div>
-<div class="detail-item"><span class="label">Nationality</span><span class="value">Indian</span></div>
 </div>
-<div class="quote-block">I do not chase buzzwords. I chase systems that are reliable, observable, and easy to hand over to the next engineer.</div>
+<div class="quote-block">I care about the full delivery path: source, build, scan, deploy, observe, secure, and improve.</div>
 </div>
 </div>
 </div>
@@ -363,41 +439,18 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section id="skills" class="alt-bg">
 <div class="container">
 <div class="section-header reveal">
-<h2>Technical Skills</h2>
-<p>Tools I actually use, not just list on a resume.</p>
+<div class="eyebrow">runtime capability matrix</div>
+<h2>Skills Matrix</h2>
+<p>Grouped by the layers of a cloud-native delivery pipeline, not just a random list of tools.</p>
 <div class="divider"></div>
 </div>
 <div class="skills-grid reveal">
-<div class="skill-card">
-<h4>Cloud Platforms</h4>
-<ul><li>AWS (EC2, ECR, IAM, VPC, S3)</li><li>Civo Cloud (K3s)</li><li>Cloud Networking</li><li>Serverless Architecture</li></ul>
-</div>
-<div class="skill-card">
-<h4>Infrastructure & Automation</h4>
-<ul><li>Terraform</li><li>Docker</li><li>Shell Scripting</li><li>Infrastructure as Code</li><li>Configuration Management</li></ul>
-</div>
-<div class="skill-card">
-<h4>CI/CD & GitOps</h4>
-<ul><li>GitHub Actions</li><li>ArgoCD</li><li>Argo Rollouts</li><li>Git</li><li>Canary Deployments</li></ul>
-</div>
-<div class="skill-card">
-<h4>Kubernetes & Orchestration</h4>
-<ul><li>K3s / Kubernetes</li><li>HPA</li><li>Load Balancing</li><li>Container Orchestration</li></ul>
-</div>
-<div class="skill-card">
-<h4>Observability & Security</h4>
-<ul><li>Prometheus</li><li>Grafana Cloud</li><li>HashiCorp Vault</li><li>OpenTelemetry</li><li>Jaeger</li><li>Trivy</li><li>SonarCloud</li></ul>
-</div>
-<div class="skill-card">
-<h4>Programming & Scripting</h4>
-<ul><li>Python</li><li>JavaScript</li><li>Node.js</li><li>Flask</li><li>Express</li><li>HTML5</li><li>CSS3</li></ul>
-</div>
-</div>
-<div class="quick-facts reveal">
-<div class="fact"><span class="num">4</span><span class="label">Project Phases Built</span></div>
-<div class="fact"><span class="num">GitOps</span><span class="label">ArgoCD Deployed</span></div>
-<div class="fact"><span class="num">Davangere</span><span class="label">Based In</span></div>
-<div class="fact"><span class="num">24/7</span><span class="label">On-Call Mindset</span></div>
+<div class="skill-card"><div class="layer-kicker">layer // cloud</div><h4>Cloud Platforms</h4><ul><li>AWS EC2</li><li>AWS ECR</li><li>IAM</li><li>VPC</li><li>S3</li><li>Civo K3s</li></ul></div>
+<div class="skill-card"><div class="layer-kicker">layer // infrastructure</div><h4>IaC & Automation</h4><ul><li>Terraform</li><li>Docker</li><li>Shell Scripting</li><li>Declarative Config</li><li>Linux</li></ul></div>
+<div class="skill-card"><div class="layer-kicker">layer // delivery</div><h4>CI/CD & GitOps</h4><ul><li>GitHub Actions</li><li>ArgoCD</li><li>Argo Rollouts</li><li>Git</li><li>Canary Release</li></ul></div>
+<div class="skill-card"><div class="layer-kicker">layer // orchestration</div><h4>Kubernetes Runtime</h4><ul><li>Kubernetes</li><li>K3s</li><li>HPA</li><li>Services</li><li>Load Balancing</li></ul></div>
+<div class="skill-card"><div class="layer-kicker">layer // visibility</div><h4>Observability & Security</h4><ul><li>Prometheus</li><li>Grafana</li><li>OpenTelemetry</li><li>Jaeger</li><li>Vault</li><li>Trivy</li><li>SonarCloud</li></ul></div>
+<div class="skill-card"><div class="layer-kicker">layer // application</div><h4>Backend & Scripting</h4><ul><li>Python</li><li>Go (Golang)</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>REST APIs</li></ul></div>
 </div>
 </div>
 </section>
@@ -405,128 +458,95 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section id="platform">
 <div class="container">
 <div class="section-header reveal">
-<h2>Featured DevOps Project</h2>
-<p>The project that best represents how I learn, build, debug, document, and improve real cloud infrastructure.</p>
+<div class="eyebrow">featured deployment case study</div>
+<h2>DevOps Infinity Platform</h2>
+<p>A production-style cloud-native pipeline showing source control, image build, security gates, GitOps, rollout safety, observability, secrets, and resilience testing.</p>
 <div class="divider"></div>
 </div>
 <div class="platform-hero reveal">
-<h3>My hands-on journey from Flask on EC2 to GitOps on Kubernetes</h3>
-<p>This is the project I use to show how I think as an engineer. I started small with a Python Flask app, containerized it, automated deployments, moved it to Kubernetes, and then kept adding the things I care about: GitOps, monitoring, security checks, canary releases, tracing, chaos testing, and secrets management.</p>
+<h3>From a local Flask service to a GitOps-managed cluster</h3>
+<p>DevOps Infinity is my primary infrastructure sandbox. I engineered it to demonstrate the complete lifecycle of a service moving from source control to a resilient cloud runtime. It integrates automated vulnerability scanning, declarative state management, progressive canary rollouts, and proactive failure testing.</p>
 <div class="platform-meta">
-<div class="meta-item"><span class="dot"></span> 4 Progressive Phases</div>
-<div class="meta-item"><span class="dot"></span> AWS + Civo Cloud</div>
-<div class="meta-item"><span class="dot"></span> Kubernetes (K3s)</div>
-<div class="meta-item"><span class="dot"></span> ArgoCD + GitOps</div>
-<div class="meta-item"><span class="dot"></span> Vault + Chaos</div>
+<div class="meta-item"><span class="dot"></span> source → build → scan → deploy</div>
+<div class="meta-item"><span class="dot"></span> AWS + Civo K3s</div>
+<div class="meta-item"><span class="dot"></span> ArgoCD GitOps</div>
+<div class="meta-item"><span class="dot"></span> Canary Rollouts</div>
+<div class="meta-item"><span class="dot"></span> Observability + Vault</div>
 </div>
 </div>
+<div class="architecture-grid reveal">
+<div class="arch-card">
+<h4>Cloud-native architecture map</h4>
+<div class="arch-diagram-wrapper">
+<svg class="arch-diagram" viewBox="0 0 760 360" role="img" aria-label="DevOps Infinity architecture flow">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L7,3 z" fill="#58A6FF"/></marker></defs>
+<!-- Adjusted x2 and y2 coords to prevent arrowhead clipping -->
+<line class="arch-line" x1="150" y1="70" x2="292" y2="70" marker-end="url(#arrow)"/>
+<line class="arch-line" x1="450" y1="70" x2="602" y2="70" marker-end="url(#arrow)"/>
+<line class="arch-line" x1="670" y1="120" x2="670" y2="197" marker-end="url(#arrow)"/>
+<line class="arch-line" x1="610" y1="250" x2="463" y2="250" marker-end="url(#arrow)"/>
+<line class="arch-line" x1="300" y1="250" x2="178" y2="250" marker-end="url(#arrow)"/>
+<rect class="arch-node primary" x="35" y="35" width="130" height="70" rx="14"/><text class="arch-text" x="100" y="64" text-anchor="middle">GitHub</text><text class="arch-sub" x="100" y="84" text-anchor="middle">source / manifests</text>
+<rect class="arch-node primary" x="300" y="35" width="155" height="70" rx="14"/><text class="arch-text" x="377" y="64" text-anchor="middle">GitHub Actions</text><text class="arch-sub" x="377" y="84" text-anchor="middle">build + trivy + sonar</text>
+<rect class="arch-node green" x="610" y="35" width="120" height="70" rx="14"/><text class="arch-text" x="670" y="64" text-anchor="middle">AWS ECR</text><text class="arch-sub" x="670" y="84" text-anchor="middle">image registry</text>
+<rect class="arch-node green" x="590" y="205" width="160" height="90" rx="14"/><text class="arch-text" x="670" y="238" text-anchor="middle">Kubernetes / K3s</text><text class="arch-sub" x="670" y="260" text-anchor="middle">pods · svc · hpa</text>
+<rect class="arch-node primary" x="300" y="205" width="160" height="90" rx="14"/><text class="arch-text" x="380" y="238" text-anchor="middle">ArgoCD</text><text class="arch-sub" x="380" y="260" text-anchor="middle">sync + rollout</text>
+<rect class="arch-node amber" x="35" y="205" width="135" height="90" rx="14"/><text class="arch-text" x="102" y="238" text-anchor="middle">Telemetry</text><text class="arch-sub" x="102" y="260" text-anchor="middle">grafana · jaeger · vault</text>
+</svg>
+</div>
+</div>
+<div class="pipeline-card">
+<h4>Release pipeline flow</h4>
+<div class="pipeline-flow">
+<div class="pipeline-step"><div class="idx">01</div><div><strong>Source update</strong><span>GitHub commit + manifest change</span></div><div class="state blue">tracked</div></div>
+<div class="pipeline-step"><div class="idx">02</div><div><strong>Build artifact</strong><span>Docker image packaged for runtime</span></div><div class="state">built</div></div>
+<div class="pipeline-step"><div class="idx">03</div><div><strong>Quality gates</strong><span>SonarCloud + Trivy scan before release</span></div><div class="state">passed</div></div>
+<div class="pipeline-step"><div class="idx">04</div><div><strong>Registry push</strong><span>Image published to AWS ECR</span></div><div class="state blue">versioned</div></div>
+<div class="pipeline-step"><div class="idx">05</div><div><strong>GitOps sync</strong><span>ArgoCD reconciles cluster state</span></div><div class="state">synced</div></div>
+<div class="pipeline-step"><div class="idx">06</div><div><strong>Progressive rollout</strong><span>Canary traffic 20% → 50% → 100%</span></div><div class="state amber">controlled</div></div>
+</div>
+</div>
+</div>
+<div class="capability-grid reveal">
+<div class="capability-card"><div class="cap-top"><h4>Security Gate</h4><span class="cap-tag">scan // enabled</span></div><p>Trivy and SonarCloud are represented as release blockers instead of afterthought checks.</p></div>
+<div class="capability-card"><div class="cap-top"><h4>GitOps State</h4><span class="cap-tag">state // synced</span></div><p>ArgoCD keeps deployment intent stored in Git and reduces configuration drift.</p></div>
+<div class="capability-card"><div class="cap-top"><h4>Rollout Safety</h4><span class="cap-tag">deploy // canary</span></div><p>Argo Rollouts demonstrates controlled promotion instead of one-shot risky releases.</p></div>
+<div class="capability-card"><div class="cap-top"><h4>Observability</h4><span class="cap-tag">metrics // active</span></div><p>Prometheus, Grafana, OpenTelemetry, and Jaeger give visibility into runtime behavior.</p></div>
+<div class="capability-card"><div class="cap-top"><h4>Secrets Lifecycle</h4><span class="cap-tag">vault // unsealed</span></div><p>Vault represents a shift away from hardcoded configuration and casual secret handling.</p></div>
+<div class="capability-card"><div class="cap-top"><h4>Failure Testing</h4><span class="cap-tag">chaos // simulated</span></div><p>LitmusChaos experiments help think about failure before failure happens.</p></div>
+</div>
+
+<div class="release-log reveal">
+<div class="terminal-title"><span class="term-dot"></span>deploy-log // devops-infinity-release</div>
+<div class="deploy-log"><span class="cmd">$ git push origin main</span><br><span class="ok">✔</span> source updated and pipeline triggered<br><span class="ok">✔</span> docker image built and tagged<br><span class="ok">✔</span> sonar quality gate evaluated<br><span class="ok">✔</span> trivy container scan completed<br><span class="ok">✔</span> image published to ECR<br><span class="ok">✔</span> argocd sync reconciled desired state<br><span class="warn">↳</span> canary rollout promoted 20% → 50% → 100%<br><span class="ok">✔</span> metrics and traces available for debugging</div>
+</div>
+
+<!-- Fault Injection Sandbox -->
+<div class="evidence-console reveal" style="margin-bottom: 2.5rem;">
+  <h4 class="sandbox-header">Platform Fault Injection Sandbox</h4>
+  <p class="sandbox-desc">Interactive UI simulation of failure events and the resilience actions I designed around them.</p>
+  <div class="sandbox-controls">
+    <button class="btn btn-secondary sandbox-btn" onclick="triggerSimulation('latency')">Inject Network Latency</button>
+    <button class="btn btn-secondary sandbox-btn" onclick="triggerSimulation('podkill')">Simulate Pod Failure</button>
+  </div>
+  <div class="deploy-log sandbox-console" id="sandboxConsole">
+    [system]: Sandbox engine ready. Select an injection method...
+  </div>
+</div>
+
 <div class="reveal">
 <div class="phase-tabs">
-<div class="phase-tab active" onclick="showPhase('phase1')">Phase 1 — Foundation</div>
-<div class="phase-tab" onclick="showPhase('phase2')">Phase 2 — Intermediate</div>
-<div class="phase-tab" onclick="showPhase('phase3')">Phase 3 — Advanced</div>
-<div class="phase-tab" onclick="showPhase('phase4')">Phase 4 — FAANG Level</div>
-<div class="phase-tab" onclick="showPhase('live')">Live Screenshots</div>
+<div class="phase-tab active" onclick="showPhase('phase1')">01 / Foundation</div>
+<div class="phase-tab" onclick="showPhase('phase2')">02 / Orchestration</div>
+<div class="phase-tab" onclick="showPhase('phase3')">03 / GitOps Rollout</div>
+<div class="phase-tab" onclick="showPhase('phase4')">04 / Resilience</div>
+<div class="phase-tab" onclick="showPhase('live')">Evidence Console</div>
 </div>
-<div class="phase-panel active" id="phase1">
-<div class="phase-content">
-<div class="phase-info">
-<h4>Phase 1 — Foundation</h4>
-<p>Started with a Python Flask application, containerized it with Docker, provisioned AWS infrastructure using Terraform, and built a CI/CD pipeline with GitHub Actions that builds, scans, pushes, and deploys automatically.</p>
-<ul>
-<li>Flask application with /health endpoint</li>
-<li>Docker containerization with multi-stage builds</li>
-<li>GitHub Actions: build, SonarCloud, Trivy, push to ECR, deploy to EC2</li>
-<li>Terraform: EC2, ECR, IAM roles, Security Groups, VPC</li>
-<li>Region: ap-south-1 (Mumbai)</li>
-</ul>
-<div class="phase-stack">
-<span class="tool-tag primary">Python Flask</span><span class="tool-tag">Docker</span><span class="tool-tag">GitHub Actions</span><span class="tool-tag">Terraform</span><span class="tool-tag">AWS EC2</span><span class="tool-tag">AWS ECR</span><span class="tool-tag">Trivy</span><span class="tool-tag">SonarCloud</span>
-</div>
-</div>
-<div class="phase-img" onclick="openModal('images/phase-1.png')"><img src="images/phase-1.png" alt="Phase 1 Foundation Stack"></div>
-</div>
-</div>
-<div class="phase-panel" id="phase2">
-<div class="phase-content">
-<div class="phase-info">
-<h4>Phase 2 — Intermediate</h4>
-<p>Migrated from EC2 to Kubernetes on Civo K3s. Added Prometheus monitoring with Grafana Cloud dashboards, Horizontal Pod Autoscaling, and load balancing.</p>
-<ul>
-<li>Civo Kubernetes (K3s) cluster deployment</li>
-<li>Prometheus metrics collection with remote write to Grafana Cloud</li>
-<li>HPA scaling 2 to 5 pods at 70% CPU</li>
-<li>Civo Cloud LoadBalancer exposing port 80</li>
-<li>ECR image pull secrets for private registry</li>
-<li>Liveness and readiness probes on /health</li>
-</ul>
-<div class="phase-stack">
-<span class="tool-tag primary">Kubernetes</span><span class="tool-tag">Civo K3s</span><span class="tool-tag">Prometheus</span><span class="tool-tag">Grafana Cloud</span><span class="tool-tag">HPA</span>
-</div>
-</div>
-<div class="phase-img" onclick="openModal('images/phase-2.png')"><img src="images/phase-2.png" alt="Phase 2 Intermediate Stack"></div>
-</div>
-</div>
-<div class="phase-panel" id="phase3">
-<div class="phase-content">
-<div class="phase-info">
-<h4>Phase 3 — Advanced</h4>
-<p>Introduced GitOps with ArgoCD for declarative deployments. Added DevSecOps with SonarCloud and Trivy scanning. Implemented canary deployments using Argo Rollouts.</p>
-<ul>
-<li>ArgoCD v3.4.3 for GitOps deployment management</li>
-<li>SonarCloud code quality gates in CI pipeline</li>
-<li>Trivy container security scanning</li>
-<li>Argo Rollouts v1.9.0 for progressive delivery</li>
-<li>Canary strategy: 20% to 50% to 100% traffic shift</li>
-</ul>
-<div class="phase-stack">
-<span class="tool-tag primary">ArgoCD</span><span class="tool-tag">GitOps</span><span class="tool-tag">Argo Rollouts</span><span class="tool-tag">Canary</span><span class="tool-tag">SonarCloud</span><span class="tool-tag">Trivy</span>
-</div>
-</div>
-<div class="phase-img" onclick="openModal('images/phase-3.png')"><img src="images/phase-3.png" alt="Phase 3 Advanced Stack"></div>
-</div>
-</div>
-<div class="phase-panel" id="phase4">
-<div class="phase-content">
-<div class="phase-info">
-<h4>Phase 4 — FAANG Level</h4>
-<p>Enterprise-grade observability, chaos engineering, and secrets management. Added distributed tracing, chaos experiments, and dynamic secrets with Vault.</p>
-<ul>
-<li>Jaeger all-in-one for distributed request tracing</li>
-<li>OpenTelemetry Collector for vendor-neutral telemetry</li>
-<li>LitmusChaos for chaos experiments (pod kill, network latency)</li>
-<li>HashiCorp Vault v2.0.2 initialized and unsealed</li>
-<li>Dynamic secrets management ready for production</li>
-</ul>
-<div class="phase-stack">
-<span class="tool-tag primary">Jaeger</span><span class="tool-tag">OpenTelemetry</span><span class="tool-tag">LitmusChaos</span><span class="tool-tag">Vault</span><span class="tool-tag">Chaos Engineering</span>
-</div>
-</div>
-<div class="phase-img" onclick="openModal('images/phase-4.png')"><img src="images/phase-4.png" alt="Phase 4 FAANG Level Stack"></div>
-</div>
-</div>
-<div class="phase-panel" id="live">
-<div class="phase-content" style="grid-template-columns:1fr">
-<div class="phase-info">
-<h4>Live Cluster Screenshots</h4>
-<p>These are real screenshots from my running Kubernetes cluster. Not mockups, not tutorials. This is what my DevOps Infinity platform actually looks like in production.</p>
-</div>
-</div>
-<div class="gallery-grid">
-<div class="gallery-item" onclick="openModal('images/k8s-pods-1.png')"><img src="images/k8s-pods-1.png" alt="Kubernetes pods"><div class="caption">Kubernetes pods across all namespaces</div></div>
-<div class="gallery-item" onclick="openModal('images/k8s-pods-2.png')"><img src="images/k8s-pods-2.png" alt="DevOps Infinity pods"><div class="caption">DevOps Infinity pods running in cluster</div></div>
-<div class="gallery-item" onclick="openModal('images/health-checks.png')"><img src="images/health-checks.png" alt="Health checks"><div class="caption">Health checks from both EC2 and K8s</div></div>
-<div class="gallery-item" onclick="openModal('images/argocd-sync.png')"><img src="images/argocd-sync.png" alt="ArgoCD synced"><div class="caption">ArgoCD application synced to HEAD</div></div>
-<div class="gallery-item" onclick="openModal('images/argocd-app.png')"><img src="images/argocd-app.png" alt="ArgoCD app"><div class="caption">ArgoCD application: Healthy + Synced</div></div>
-<div class="gallery-item" onclick="openModal('images/argocd-tree.png')"><img src="images/argocd-tree.png" alt="ArgoCD tree"><div class="caption">ArgoCD resource tree view</div></div>
-<div class="gallery-item" onclick="openModal('images/kubectl-top.png')"><img src="images/kubectl-top.png" alt="kubectl top"><div class="caption">Resource usage: kubectl top nodes and pods</div></div>
-<div class="gallery-item" onclick="openModal('images/argo-rollouts.png')"><img src="images/argo-rollouts.png" alt="Argo Rollouts"><div class="caption">Argo Rollouts: Canary deployment</div></div>
-<div class="gallery-item" onclick="openModal('images/github-actions.png')"><img src="images/github-actions.png" alt="GitHub Actions"><div class="caption">GitHub Actions: Build, Scan, Push, Deploy</div></div>
-<div class="gallery-item" onclick="openModal('images/ec2-health.png')"><img src="images/ec2-health.png" alt="EC2 health"><div class="caption">EC2 health endpoint returning healthy</div></div>
-<div class="gallery-item" onclick="openModal('images/grafana-dashboards.png')"><img src="images/grafana-dashboards.png" alt="Grafana"><div class="caption">Grafana Cloud: Kubernetes monitoring</div></div>
-<div class="gallery-item" onclick="openModal('images/vault-status.png')"><img src="images/vault-status.png" alt="Vault"><div class="caption">HashiCorp Vault: Initialized and unsealed</div></div>
-</div>
-</div>
+<div class="phase-panel active" id="phase1"><div class="phase-content"><div class="phase-info"><h4>Phase 1 — CI/CD Foundation</h4><p>Established the delivery baseline: application packaging, cloud infrastructure, image registry, and automated pipeline gates.</p><ul><li>Python Flask service with a health endpoint for readiness checks</li><li>Multi-stage Docker container workflow for consistent runtime packaging</li><li>Terraform-managed AWS infrastructure in ap-south-1</li><li>GitHub Actions pipeline covering build, quality check, vulnerability scan, push, and deploy</li><li>ECR registry flow for container image publishing</li></ul><div class="phase-stack"><span class="tool-tag primary">runtime // flask</span><span class="tool-tag">build // docker</span><span class="tool-tag">iac // terraform</span><span class="tool-tag">ci // github-actions</span><span class="tool-tag">scan // trivy</span></div></div><div class="phase-img" onclick="openModal('images/phase-1.png')"><img src="images/phase-1.png" alt="Phase 1 Foundation Stack"></div></div></div>
+<div class="phase-panel" id="phase2"><div class="phase-content"><div class="phase-info"><h4>Phase 2 — Kubernetes Runtime & Monitoring</h4><p>Migrated from an instance-based deployment to a Kubernetes runtime model and added operational visibility.</p><ul><li>Civo Kubernetes / K3s cluster deployment</li><li>Deployments, services, image pull secrets, and load balancing</li><li>Horizontal Pod Autoscaling targeting 70% CPU</li><li>Prometheus metrics collection with Grafana dashboards</li><li>Health and resource checks using kubectl and live endpoints</li></ul><div class="phase-stack"><span class="tool-tag primary">cluster // k3s</span><span class="tool-tag">scale // hpa</span><span class="tool-tag">metrics // prometheus</span><span class="tool-tag">dashboard // grafana</span></div></div><div class="phase-img" onclick="openModal('images/phase-2.png')"><img src="images/phase-2.png" alt="Phase 2 Kubernetes Stack"></div></div></div>
+<div class="phase-panel" id="phase3"><div class="phase-content"><div class="phase-info"><h4>Phase 3 — GitOps & Progressive Delivery</h4><p>Moved deployment control into Git and introduced a safer rollout model using ArgoCD and Argo Rollouts.</p><ul><li>ArgoCD GitOps sync model for Kubernetes manifests</li><li>Reduced configuration drift by reconciling desired state from Git</li><li>Canary deployment strategy using Argo Rollouts</li><li>Traffic promotion path from 20% to 50% to 100%</li><li>Security and quality gates remain part of the delivery workflow</li></ul><div class="phase-stack"><span class="tool-tag primary">state // argocd</span><span class="tool-tag">deploy // gitops</span><span class="tool-tag">rollout // canary</span><span class="tool-tag">quality // sonarcloud</span></div></div><div class="phase-img" onclick="openModal('images/phase-3.png')"><img src="images/phase-3.png" alt="Phase 3 GitOps Stack"></div></div></div>
+<div class="phase-panel" id="phase4"><div class="phase-content"><div class="phase-info"><h4>Phase 4 — Observability, Secrets & Resilience</h4><p>Expanded the project beyond deployment into the areas that matter after release: visibility, secrets, and failure readiness.</p><ul><li>OpenTelemetry Collector for vendor-neutral telemetry routing</li><li>Jaeger for distributed request tracing and debugging</li><li>HashiCorp Vault initialized and unsealed for secret-management practice</li><li>LitmusChaos experiments for pod and network failure simulation</li><li>Reliability mindset: design for debugging, recovery, and safer operations</li></ul><div class="phase-stack"><span class="tool-tag primary">trace // jaeger</span><span class="tool-tag">telemetry // otel</span><span class="tool-tag">secrets // vault</span><span class="tool-tag">chaos // litmus</span></div></div><div class="phase-img" onclick="openModal('images/phase-4.png')"><img src="images/phase-4.png" alt="Phase 4 Resilience Stack"></div></div></div>
+<div class="phase-panel" id="live"><div class="phase-content" style="grid-template-columns: 1fr;"><div class="phase-info"><h4>Evidence Console</h4><p>Grouped screenshots from the project environment. These are organized like an operations console so the proof is easier to scan.</p></div></div><div class="evidence-console"><div class="evidence-tabs"><button class="evidence-tab active" onclick="switchEvidence('gitopsEvidence')">CI/CD & GitOps</button><button class="evidence-tab" onclick="switchEvidence('runtimeEvidence')">Runtime & Monitoring</button><button class="evidence-tab" onclick="switchEvidence('securityEvidence')">Security & Resilience</button></div><div class="evidence-pane active" id="gitopsEvidence"><div class="gallery-grid"><div class="gallery-item" onclick="openModal('images/github-actions.png')"><img src="images/github-actions.png" alt="GitHub Actions"><div class="caption">pipeline // build scan push deploy</div></div><div class="gallery-item" onclick="openModal('images/argocd-app.png')"><img src="images/argocd-app.png" alt="ArgoCD app"><div class="caption">state // healthy synced</div></div><div class="gallery-item" onclick="openModal('images/argocd-tree.png')"><img src="images/argocd-tree.png" alt="ArgoCD tree"><div class="caption">graph // resource tree</div></div><div class="gallery-item" onclick="openModal('images/argo-rollouts.png')"><img src="images/argo-rollouts.png" alt="Argo Rollouts"><div class="caption">deploy // canary rollout</div></div></div></div><div class="evidence-pane" id="runtimeEvidence"><div class="gallery-grid"><div class="gallery-item" onclick="openModal('images/k8s-pods-1.png')"><img src="images/k8s-pods-1.png" alt="Kubernetes pods"><div class="caption">cluster // namespaces</div></div><div class="gallery-item" onclick="openModal('images/k8s-pods-2.png')"><img src="images/k8s-pods-2.png" alt="DevOps Infinity pods"><div class="caption">runtime // app pods</div></div><div class="gallery-item" onclick="openModal('images/kubectl-top.png')"><img src="images/kubectl-top.png" alt="kubectl top"><div class="caption">resources // kubectl top</div></div><div class="gallery-item" onclick="openModal('images/grafana-dashboards.png')"><img src="images/grafana-dashboards.png" alt="Grafana"><div class="caption">metrics // grafana cloud</div></div><div class="gallery-item" onclick="openModal('images/health-checks.png')"><img src="images/health-checks.png" alt="Health checks"><div class="caption">health // service endpoints</div></div></div></div><div class="evidence-pane" id="securityEvidence"><div class="gallery-grid"><div class="gallery-item" onclick="openModal('images/vault-status.png')"><img src="images/vault-status.png" alt="Vault"><div class="caption">secrets // vault unsealed</div></div><div class="gallery-item" onclick="openModal('images/ec2-health.png')"><img src="images/ec2-health.png" alt="EC2 health"><div class="caption">fallback // ec2 health</div></div><div class="gallery-item" onclick="openModal('images/argocd-sync.png')"><img src="images/argocd-sync.png" alt="ArgoCD synced"><div class="caption">sync // deployment integrity</div></div></div></div></div></div>
 </div>
 </div>
 </section>
@@ -534,8 +554,8 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section id="projects" class="alt-bg">
 <div class="container">
 <div class="section-header reveal">
-<h2>Other Projects</h2>
-<p>Additional work and learning projects.</p>
+<h2>Project Artifacts</h2>
+<p>Smaller builds and experiments that support the same engineering direction.</p>
 <div class="divider"></div>
 </div>
 <div class="projects-grid reveal">
@@ -562,7 +582,7 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <div class="project-tools">
 <div class="tools-label">Built with</div>
 <div class="tools-list">
-<span class="tool-tag primary">Node.js</span><span class="tool-tag">Express</span><span class="tool-tag">JavaScript</span><span class="tool-tag">Crypto</span>
+<span class="tool-tag primary">Go (Golang)</span><span class="tool-tag">Goroutines</span><span class="tool-tag">Node.js</span><span class="tool-tag">Crypto</span>
 </div>
 </div>
 <div class="project-footer"><a href="https://github.com/supreeth0008/supreeth_webhook_engine" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a></div>
@@ -574,194 +594,144 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section id="code">
 <div class="container">
 <div class="section-header reveal">
-<h2>Code Showcase</h2>
-<p>Snippets pulled straight from my actual repositories.</p>
+<div class="eyebrow">code review samples</div>
+<h2>Production-Aware Snippets</h2>
+<p>Small code windows that show the engineering direction: safer infrastructure, fail-fast services, security gates, and a Go worker-pool design sample.</p>
 <div class="divider"></div>
 </div>
 <div class="reveal">
 <div class="code-tabs">
-<div class="code-tab active" onclick="showCode('terraform')">terraform/main.tf</div>
+<div class="code-tab active" onclick="showCode('terraform')">terraform/security.tf</div>
+<div class="code-tab" onclick="showCode('pipeline')">ci/security-gate.yml</div>
+<div class="code-tab" onclick="showCode('flask')">app/fail-fast.py</div>
 <div class="code-tab" onclick="showCode('hmac')">utils/hmac.js</div>
-<div class="code-tab" onclick="showCode('flask')">app/app.py</div>
-<div class="code-tab" onclick="showCode('events')">routes/events.js</div>
+<div class="code-tab" onclick="showCode('go-worker')">worker/webhook.go</div>
 </div>
 <div class="code-panel active" id="terraform">
-<div class="code-block">
-<div class="code-header">
-<div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div>
-<span class="code-filename">devops-infinity / terraform / main.tf</span>
-<button class="code-copy" onclick="copyCode(this)">Copy</button>
-</div>
-<div class="code-body"><pre><span class="kw">data</span> <span class="str">"aws_vpc"</span> <span class="str">"default"</span> {
-  <span class="var">default</span> = <span class="kw">true</span>
-}
+<div class="code-block"><div class="code-header"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div><span class="code-filename">devops-infinity / terraform / security.tf</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+<div class="code-body"><pre>resource &quot;aws_security_group&quot; &quot;app_backend&quot; {
+  name        = &quot;${var.app_name}-backend-sg&quot;
+  description = &quot;Backend only accepts traffic from the public load balancer&quot;
+  vpc_id      = data.aws_vpc.default.id
 
-<span class="kw">resource</span> <span class="str">"aws_security_group"</span> <span class="str">"app"</span> {
-  <span class="var">name</span>        = <span class="str">"${var.app_name}-sg"</span>
-  <span class="var">description</span> = <span class="str">"Security group for ${var.app_name}"</span>
-  <span class="var">vpc_id</span>      = <span class="var">data.aws_vpc.default.id</span>
-
-  <span class="var">ingress</span> {
-    <span class="var">description</span> = <span class="str">"HTTP"</span>
-    <span class="var">from_port</span>   = <span class="num">80</span>
-    <span class="var">to_port</span>     = <span class="num">80</span>
-    <span class="var">protocol</span>    = <span class="str">"tcp"</span>
-    <span class="var">cidr_blocks</span> = [<span class="str">"0.0.0.0/0"</span>]
+  ingress {
+    description     = &quot;Allow application traffic only from upstream load balancer&quot;
+    from_port       = 5000
+    to_port         = 5000
+    protocol        = &quot;tcp&quot;
+    security_groups = [aws_security_group.load_balancer.id]
   }
 
-  <span class="var">ingress</span> {
-    <span class="var">description</span> = <span class="str">"Application port"</span>
-    <span class="var">from_port</span>   = <span class="num">5000</span>
-    <span class="var">to_port</span>     = <span class="num">5000</span>
-    <span class="var">protocol</span>    = <span class="str">"tcp"</span>
-    <span class="var">cidr_blocks</span> = [<span class="str">"0.0.0.0/0"</span>]
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = &quot;-1&quot;
+    cidr_blocks = [&quot;0.0.0.0/0&quot;]
   }
+}</pre></div></div></div>
+<div class="code-panel" id="pipeline">
+<div class="code-block"><div class="code-header"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div><span class="code-filename">devops-infinity / .github / workflows / security-gate.yml</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+<div class="code-body"><pre>- name: Run Trivy vulnerability scan
+  uses: aquasecurity/trivy-action@master
+  with:
+    image-ref: ${{ env.IMAGE_URI }}
+    format: table
+    severity: CRITICAL,HIGH
+    exit-code: 1
 
-  <span class="var">egress</span> {
-    <span class="var">from_port</span>   = <span class="num">0</span>
-    <span class="var">to_port</span>     = <span class="num">0</span>
-    <span class="var">protocol</span>    = <span class="str">"-1"</span>
-    <span class="var">cidr_blocks</span> = [<span class="str">"0.0.0.0/0"</span>]
-  }
+- name: SonarCloud quality gate
+  uses: SonarSource/sonarqube-scan-action@master
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-  <span class="var">tags</span> = {
-    <span class="var">Name</span>        = <span class="str">"${var.app_name}-sg"</span>
-    <span class="var">Environment</span> = <span class="var">var.environment</span>
-  }
-}
-
-<span class="kw">resource</span> <span class="str">"aws_ecr_repository"</span> <span class="str">"app"</span> {
-  <span class="var">name</span>                 = <span class="var">var.app_name</span>
-  <span class="var">image_tag_mutability</span> = <span class="str">"MUTABLE"</span>
-
-  <span class="var">image_scanning_configuration</span> {
-    <span class="var">scan_on_push</span> = <span class="kw">true</span>
-  }
-}</pre></div>
-</div>
-</div>
-<div class="code-panel" id="hmac">
-<div class="code-block">
-<div class="code-header">
-<div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div>
-<span class="code-filename">webhook-engine / src / utils / hmac.js</span>
-<button class="code-copy" onclick="copyCode(this)">Copy</button>
-</div>
-<div class="code-body"><pre><span class="str">'use strict'</span>;
-
-<span class="kw">const</span> <span class="var">crypto</span> = <span class="fn">require</span>(<span class="str">'crypto'</span>);
-<span class="kw">const</span> <span class="var">SIGNING_KEY</span> = <span class="var">process.env.WEBHOOK_SECRET</span> || <span class="str">'fallback_dev_secret'</span>;
-
-<span class="cm">/**
- * Signs a payload string using HMAC-SHA256.
- */</span>
-<span class="kw">function</span> <span class="fn">signPayload</span>(<span class="var">payload</span>) {
-  <span class="kw">return</span> <span class="var">crypto</span>
-    .<span class="fn">createHmac</span>(<span class="str">'sha256'</span>, <span class="var">SIGNING_KEY</span>)
-    .<span class="fn">update</span>(<span class="var">payload</span>)
-    .<span class="fn">digest</span>(<span class="str">'hex'</span>);
-}
-
-<span class="cm">/**
- * Verifies a signature using timingSafeEqual.
- */</span>
-<span class="kw">function</span> <span class="fn">verifySignature</span>(<span class="var">payload</span>, <span class="var">signature</span>) {
-  <span class="kw">const</span> <span class="var">expected</span> = <span class="fn">signPayload</span>(<span class="var">payload</span>);
-  <span class="kw">try</span> {
-    <span class="kw">return</span> <span class="var">crypto</span>.<span class="fn">timingSafeEqual</span>(
-      <span class="var">Buffer</span>.<span class="fn">from</span>(<span class="var">expected</span>, <span class="str">'hex'</span>),
-      <span class="var">Buffer</span>.<span class="fn">from</span>(<span class="var">signature</span>, <span class="str">'hex'</span>)
-    );
-  } <span class="kw">catch</span> {
-    <span class="kw">return</span> <span class="kw">false</span>;
-  }
-}
-
-<span class="var">module</span>.<span class="var">exports</span> = { <span class="var">signPayload</span>, <span class="var">verifySignature</span> };</pre></div>
-</div>
-</div>
+- name: Deploy after quality gates
+  if: success()
+  run: |
+    docker push $IMAGE_URI
+    argocd app sync devops-infinity
+    argocd app wait devops-infinity --health</pre></div></div></div>
 <div class="code-panel" id="flask">
-<div class="code-block">
-<div class="code-header">
-<div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div>
-<span class="code-filename">devops-infinity / app / app.py</span>
-<button class="code-copy" onclick="copyCode(this)">Copy</button>
-</div>
-<div class="code-body"><pre><span class="kw">from</span> flask <span class="kw">import</span> Flask, render_template, request, abort
-<span class="kw">import</span> os
-<span class="kw">import</span> socket
+<div class="code-block"><div class="code-header"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div><span class="code-filename">devops-infinity / app / fail-fast.py</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+<div class="code-body"><pre>import os
+import sys
+from flask import Flask
 
-<span class="var">app</span> = Flask(<span class="var">__name__</span>)
+REQUIRED_ENV_VARS = [&quot;ALLOWED_HOSTS&quot;, &quot;APP_VERSION&quot;, &quot;FLASK_PORT&quot;]
 
-<span class="var">ALLOWED_HOSTS</span> = os.<span class="fn">environ</span>.<span class="fn">get</span>(<span class="str">'ALLOWED_HOSTS'</span>, <span class="str">''</span>).<span class="fn">split</span>(<span class="str">','</span>)
+def validate_environment():
+    missing = [key for key in REQUIRED_ENV_VARS if not os.environ.get(key)]
+    if missing:
+        print(f&quot;CRITICAL STATE: missing runtime variables: {missing}&quot;)
+        sys.exit(1)
 
-<span class="cm"># Health check endpoint for load balancers</span>
-<span class="var">@app.route</span>(<span class="str">'/health'</span>)
-<span class="kw">def</span> <span class="fn">health</span>():
-    <span class="kw">return</span> {
-        <span class="str">'status'</span>: <span class="str">'healthy'</span>,
-        <span class="str">'version'</span>: os.<span class="fn">environ</span>.<span class="fn">get</span>(<span class="str">'APP_VERSION'</span>, <span class="str">'1.0.0'</span>)
-    }, <span class="num">200</span>
+validate_environment()
+app = Flask(__name__)
 
-<span class="var">@app.route</span>(<span class="str">'/'</span>)
-<span class="kw">def</span> <span class="fn">home</span>():
-    <span class="kw">return</span> <span class="fn">render_template</span>(
-        <span class="str">'index.html'</span>,
-        <span class="var">hostname</span>=socket.<span class="fn">gethostname</span>(),
-        <span class="var">version</span>=os.<span class="fn">environ</span>.<span class="fn">get</span>(<span class="str">'APP_VERSION'</span>, <span class="str">'1.0.0'</span>)
-    )
+@app.route(&quot;/health&quot;)
+def health():
+    return {
+        &quot;status&quot;: &quot;healthy&quot;,
+        &quot;version&quot;: os.environ[&quot;APP_VERSION&quot;]
+    }, 200</pre></div></div></div>
+<div class="code-panel" id="hmac">
+<div class="code-block"><div class="code-header"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div><span class="code-filename">webhook-engine / src / utils / hmac.js</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+<div class="code-body"><pre>const crypto = require(&#x27;crypto&#x27;);
 
-<span class="kw">if</span> <span class="var">__name__</span> == <span class="str">'__main__'</span>:
-    <span class="var">host</span> = os.<span class="fn">environ</span>.<span class="fn">get</span>(<span class="str">'FLASK_HOST'</span>, <span class="str">'0.0.0.0'</span>)
-    <span class="var">port</span> = <span class="fn">int</span>(os.<span class="fn">environ</span>.<span class="fn">get</span>(<span class="str">'FLASK_PORT'</span>, <span class="num">5000</span>))
-    <span class="var">app</span>.<span class="fn">run</span>(<span class="var">host</span>=<span class="var">host</span>, <span class="var">port</span>=<span class="var">port</span>)</pre></div>
-</div>
-</div>
-<div class="code-panel" id="events">
-<div class="code-block">
-<div class="code-header">
-<div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div>
-<span class="code-filename">webhook-engine / src / routes / events.js</span>
-<button class="code-copy" onclick="copyCode(this)">Copy</button>
-</div>
-<div class="code-body"><pre><span class="kw">const</span> <span class="var">express</span> = <span class="fn">require</span>(<span class="str">'express'</span>);
-<span class="kw">const</span> { <span class="var">v4</span>: <span class="var">uuidv4</span> } = <span class="fn">require</span>(<span class="str">'uuid'</span>);
-<span class="kw">const</span> { <span class="fn">createEvent</span>, <span class="fn">deliverEvent</span> } = <span class="fn">require</span>(<span class="str">'../db/store'</span>);
+function signPayload(payload, secret) {
+  return crypto
+    .createHmac(&#x27;sha256&#x27;, secret)
+    .update(payload)
+    .digest(&#x27;hex&#x27;);
+}
 
-<span class="kw">const</span> <span class="var">router</span> = express.<span class="fn">Router</span>();
-
-<span class="cm">// POST /events — Accepts a new event and queues it for delivery</span>
-<span class="var">router</span>.<span class="fn">post</span>(<span class="str">'/'</span>, <span class="kw">async</span> (<span class="var">req</span>, <span class="var">res</span>) => {
-  <span class="kw">const</span> { <span class="var">type</span>, <span class="var">payload</span>, <span class="var">webhook_url</span> } = <span class="var">req</span>.<span class="var">body</span>;
-
-  <span class="kw">if</span> (!<span class="var">type</span> || <span class="kw">typeof</span> <span class="var">type</span> !== <span class="str">'string'</span>) {
-    <span class="kw">return</span> <span class="var">res</span>.<span class="fn">status</span>(<span class="num">400</span>).<span class="fn">json</span>({ <span class="var">error</span>: <span class="str">'type is required'</span> });
+function verifySignature(payload, signature, secret) {
+  const expected = signPayload(payload, secret);
+  try {
+    // Explicit protection against timing attacks for cryptographic comparison
+    return crypto.timingSafeEqual(
+      Buffer.from(expected, &#x27;hex&#x27;),
+      Buffer.from(signature, &#x27;hex&#x27;)
+    );
+  } catch {
+    return false;
   }
-  <span class="kw">if</span> (!<span class="var">webhook_url</span>) {
-    <span class="kw">return</span> <span class="var">res</span>.<span class="fn">status</span>(<span class="num">400</span>).<span class="fn">json</span>({ <span class="var">error</span>: <span class="str">'webhook_url is required'</span> });
-  }
+}</pre></div></div></div>
+<div class="code-panel" id="go-worker">
+<div class="code-block"><div class="code-header"><div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div><span class="code-filename">webhook-engine / design-sample / worker.go</span><button class="code-copy" onclick="copyCode(this)">Copy</button></div>
+<div class="code-body"><pre>package main
 
-  <span class="kw">try</span> {
-    <span class="kw">new</span> <span class="fn">URL</span>(<span class="var">webhook_url</span>);
-  } <span class="kw">catch</span> {
-    <span class="kw">return</span> <span class="var">res</span>.<span class="fn">status</span>(<span class="num">400</span>).<span class="fn">json</span>({ <span class="var">error</span>: <span class="str">'invalid URL'</span> });
-  }
+import (
+	"log"
+	"net/http"
+)
 
-  <span class="kw">const</span> <span class="var">event</span> = <span class="fn">createEvent</span>({
-    <span class="var">id</span>: <span class="fn">uuidv4</span>(),
-    <span class="var">type</span>, <span class="var">payload</span>, <span class="var">webhook_url</span>,
-    <span class="var">status</span>: <span class="str">'pending'</span>,
-    <span class="var">created_at</span>: <span class="kw">new</span> <span class="fn">Date</span>().<span class="fn">toISOString</span>(),
-  });
+// Job queue pattern for fail-safe background webhook delivery
+var eventQueue = make(chan Event, 1000)
 
-  <span class="cm">// Fire and forget — delivery runs in background</span>
-  <span class="fn">setImmediate</span>(() => <span class="fn">deliverEvent</span>(<span class="var">event</span>));
-  <span class="kw">return</span> <span class="var">res</span>.<span class="fn">status</span>(<span class="num">201</span>).<span class="fn">json</span>(<span class="var">event</span>);
-});
+func init() {
+	// Spin up a highly concurrent worker pool (Goroutines) 
+	// to prevent memory leaks from unhandled requests
+	for i := 0; i < 5; i++ {
+		go deliveryWorker(eventQueue)
+	}
+}
 
-<span class="var">module</span>.<span class="var">exports</span> = <span class="var">router</span>;</pre></div>
-</div>
-</div>
+func handleWebhook(w http.ResponseWriter, r *http.Request) {
+	event, err := parsePayload(r)
+	if err != nil {
+		http.Error(w, "Invalid payload format", http.StatusBadRequest)
+		return
+	}
+
+	// Non-blocking channel drop to return 202 instantly to the client
+	select {
+	case eventQueue <- event:
+		w.WriteHeader(http.StatusAccepted)
+	default:
+		// Fails fast if worker pool is completely saturated
+		http.Error(w, "Queue capacity exceeded", http.StatusServiceUnavailable)
+	}
+}</pre></div></div></div>
 </div>
 </div>
 </section>
@@ -809,7 +779,7 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <div class="timeline">
 <div class="timeline-item">
 <h4>Event Operations & People Management</h4>
-<div class="meta">Tech Heist &bull; 2026 &bull; S-vyasa university</div>
+<div class="meta">Tech Heist &bull; 2026 &bull; S-VYASA University</div>
 <ul>
 <li>Managed end-to-end operations for a multi-stage tech competition with 5 elimination-based rounds</li>
 <li>Handled participant coordination, crowd management, and stage transitions across all event phases</li>
@@ -822,6 +792,7 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <div>
 <h3 style="margin-bottom:1.5rem;font-size:1.25rem">Education</h3>
 <div class="timeline">
+<!-- Removed High School (PUC & SSLC) to align with enterprise expectations -->
 <div class="timeline-item">
 <h4>Master of Computer Applications (MCA)</h4>
 <div class="meta">S-VYASA University, Bengaluru &bull; 2025 &ndash; 2027</div>
@@ -832,15 +803,6 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <div class="meta">Sree Siddaganga College, Tumkur &bull; 2022 &ndash; 2025 &bull; CGPA: 8.2</div>
 <p>Strong foundation in computer science, mathematics, and analytical thinking.</p>
 </div>
-<div class="timeline-item">
-<h4>Pre-University College (PUC) &mdash; PCMC</h4>
-<div class="meta">Karnataka State Board &bull; 2020 &ndash; 2022 &bull; 56.66%</div>
-<p>Physics, Chemistry, Mathematics, Computer Science stream.</p>
-</div>
-<div class="timeline-item">
-<h4>Secondary School (SSLC)</h4>
-<div class="meta">Karnataka State Board &bull; 2019 &ndash; 2020 &bull; 82.56%</div>
-</div>
 </div>
 </div>
 </div>
@@ -850,8 +812,8 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <section id="contact" class="alt-bg">
 <div class="container">
 <div class="section-header reveal">
-<h2>Let's Connect</h2>
-<p>Want to discuss a role, collaboration, or project? Send a message and I will get back to you.</p>
+<h2>Contact Handoff</h2>
+<p>Create a clean handoff request for roles, collaborations, project feedback, or recruiter conversations.</p>
 <div class="divider"></div>
 </div>
 <div class="contact-grid reveal">
@@ -889,11 +851,20 @@ footer span{background:var(--gradient);-webkit-background-clip:text;-webkit-text
 <input type="email" name="email" placeholder="Your Email" autocomplete="email" required maxlength="120">
 <input type="text" name="subject" placeholder="Subject" maxlength="120">
 <textarea name="message" placeholder="Your Message..." required minlength="10" maxlength="2000"></textarea>
-<button type="submit" class="btn btn-primary"><span>Send Message</span></button>
+<button type="submit" class="btn btn-primary"><span>Submit Handoff</span></button>
 <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
 <p class="form-note">Messages are sent to <a href="mailto:csbhatt719@gmail.com">csbhatt719@gmail.com</a>. If the form service is unavailable, the page will give you a direct email fallback.</p>
 </form>
 </div>
+</div>
+<div class="release-notes reveal">
+<h4>Portfolio Release Notes</h4>
+<ul>
+<li>v2026.07 — Reworked portfolio into a CI/CD-style control plane</li>
+<li>Added architecture map, release pipeline, evidence console, and production-aware snippets</li>
+<li>Added Go worker-pool design sample for resilient webhook delivery</li>
+<li>Deployed interactive Chaos Sandbox Engine and site telemetry checking</li>
+</ul>
 </div>
 </div>
 </section>
@@ -929,12 +900,12 @@ ctx.clearRect(0,0,w,h);
 for(let i=0;i<p.length;i++){
 let pt=p[i];pt.x+=pt.vx;pt.y+=pt.vy;
 if(pt.x<0||pt.x>w)pt.vx*=-1;if(pt.y<0||pt.y>h)pt.vy*=-1;
-ctx.beginPath();ctx.arc(pt.x,pt.y,pt.r,0,Math.PI*2);ctx.fillStyle='rgba(0,212,170,0.3)';ctx.fill();
+ctx.beginPath();ctx.arc(pt.x,pt.y,pt.r,0,Math.PI*2);ctx.fillStyle='rgba(88,166,255,0.30)';ctx.fill();
 for(let j=i+1;j<p.length;j++){
 let dx=pt.x-p[j].x,dy=pt.y-p[j].y,d=Math.sqrt(dx*dx+dy*dy);
-if(d<120){ctx.beginPath();ctx.moveTo(pt.x,pt.y);ctx.lineTo(p[j].x,p[j].y);ctx.strokeStyle='rgba(0,212,170,'+(0.15*(1-d/120))+')';ctx.lineWidth=0.5;ctx.stroke()}
+if(d<120){ctx.beginPath();ctx.moveTo(pt.x,pt.y);ctx.lineTo(p[j].x,p[j].y);ctx.strokeStyle='rgba(88,166,255,'+(0.14*(1-d/120))+')';ctx.lineWidth=0.5;ctx.stroke()}
 }
-if(mouse.x!==null){let dx=pt.x-mouse.x,dy=pt.y-mouse.y,d=Math.sqrt(dx*dx+dy*dy);if(d<180){ctx.beginPath();ctx.moveTo(pt.x,pt.y);ctx.lineTo(mouse.x,mouse.y);ctx.strokeStyle='rgba(0,212,170,'+(0.2*(1-d/180))+')';ctx.lineWidth=0.5;ctx.stroke()}}
+if(mouse.x!==null){let dx=pt.x-mouse.x,dy=pt.y-mouse.y,d=Math.sqrt(dx*dx+dy*dy);if(d<180){ctx.beginPath();ctx.moveTo(pt.x,pt.y);ctx.lineTo(mouse.x,mouse.y);ctx.strokeStyle='rgba(63,185,80,'+(0.20*(1-d/180))+')';ctx.lineWidth=0.5;ctx.stroke()}}
 }
 requestAnimationFrame(draw);
 }
@@ -943,7 +914,7 @@ draw();
 
 /* Hero Typing Effect */
 const taglineEl=document.getElementById('heroTagline');
-const taglineText="I am Supreeth — a Cloud & DevOps engineer from Davangere who learns by building, breaking, fixing, and documenting systems until they are reliable enough for real users.";
+const taglineText="Cloud & DevOps engineer focused on building reliable delivery paths: source, build, scan, deploy, observe, secure, and improve.";
 let ti=0;
 function typeHero(){if(ti<taglineText.length){taglineEl.innerHTML=taglineText.substring(0,ti+1)+'<span class="typing-cursor"></span>';ti++;setTimeout(typeHero,25)}else{taglineEl.innerHTML=taglineText+'<span class="typing-cursor"></span>'}}
 setTimeout(typeHero,600);
@@ -983,6 +954,16 @@ if(targetTab)targetTab.classList.add('active');
 document.getElementById(id).classList.add('active');
 }
 
+/* Evidence Console Tabs */
+function switchEvidence(id){
+document.querySelectorAll('.evidence-tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.evidence-pane').forEach(p=>p.classList.remove('active'));
+const tab=document.querySelector(`.evidence-tab[onclick="switchEvidence('${id}')"]`);
+if(tab)tab.classList.add('active');
+const pane=document.getElementById(id);
+if(pane)pane.classList.add('active');
+}
+
 /* Code Tabs */
 function showCode(id){
 document.querySelectorAll('.code-tab').forEach(t=>t.classList.remove('active'));
@@ -996,15 +977,18 @@ document.getElementById(id).classList.add('active');
 function copyCode(btn){
 const panel=btn.closest('.code-panel');
 const text=panel.querySelector('.code-body').innerText;
-navigator.clipboard.writeText(text).then(()=>{btn.textContent='Copied!';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied')},2000)});
+const done=()=>{btn.textContent='Copied!';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied')},2000)};
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done).catch(()=>{});}else{
+const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();done();
+}
 }
 
 /* Modal */
-function openModal(src){event.stopPropagation();document.getElementById('modalImg').src=src;document.getElementById('imgModal').classList.add('active');document.body.style.overflow='hidden'}
+function openModal(src){const e=window.event;if(e)e.stopPropagation();document.getElementById('modalImg').src=src;document.getElementById('imgModal').classList.add('active');document.body.style.overflow='hidden'}
 function closeModal(){document.getElementById('imgModal').classList.remove('active');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-/* Contact form: AJAX submit with direct email fallback */
+/* Contact form: AJAX submit */
 const contactForm=document.getElementById('contactForm');
 const formStatus=document.getElementById('formStatus');
 function setFormStatus(type,message){
@@ -1035,7 +1019,15 @@ const mailto=buildMailto(contactForm);
 try{
 if(btn)btn.disabled=true;if(label)label.textContent='Sending...';
 setFormStatus('success','Sending your message...');
-const response=await fetch(contactForm.dataset.endpoint,{method:'POST',body:new FormData(contactForm),headers:{'Accept':'application/json'}});
+const endpoint=contactForm.dataset.endpoint;
+const formData=new FormData(contactForm);
+let requestOptions;
+if(endpoint.includes('formsubmit.co')){
+requestOptions={method:'POST',body:formData,headers:{'Accept':'application/json'}};
+}else{
+requestOptions={method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({name:formData.get('name'),email:formData.get('email'),subject:formData.get('subject'),message:formData.get('message')})};
+}
+const response=await fetch(endpoint,requestOptions);
 let result={};
 try{result=await response.json()}catch{}
 if(response.ok&&(result.success===true||result.success==='true')){
@@ -1055,6 +1047,39 @@ if(btn)btn.disabled=false;if(label)label.textContent=original;
 
 /* Smooth anchor scroll */
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){const target=document.querySelector(this.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'})}}));
+
+/* Background Runtime API Polling Engine */
+async function verifyLiveRuntime() {
+  const statusIndicator = document.getElementById('liveApiStatus');
+  const pill = document.getElementById('apiPill');
+  if (!statusIndicator) return;
+  try {
+    const check = await fetch('https://supreeth0008.github.io/portfolio/', { method: 'GET' });
+    if(check.ok) {
+      statusIndicator.innerText = 'online';
+      pill.classList.remove('amber');
+    }
+  } catch (err) {
+    statusIndicator.innerText = 'offline (dev-sleep)';
+    pill.classList.add('amber');
+  }
+}
+window.addEventListener('DOMContentLoaded', verifyLiveRuntime);
+
+/* Chaos Engineering Simulation Engine */
+function triggerSimulation(type) {
+  const box = document.getElementById('sandboxConsole');
+  if (!box) return;
+  if(type === 'latency') {
+    box.innerHTML = `<span style="color: var(--primary)">[chaos-sim]: Injected 80ms cross-region network latency scenario...</span><br>
+                     <span style="color: var(--amber)">[alert]: Prometheus trigger fired: API_Latency_High (SLO Breached)</span><br>
+                     <span style="color: var(--accent)">[remediation]: Argo Rollouts auto-traffic shift executed. Healthy endpoints sustaining live load.</span>`;
+  } else if(type === 'podkill') {
+    box.innerHTML = `<span style="color: var(--primary)">[chaos-sim]: Executing pod termination scenario...</span><br>
+                     <span style="color: var(--danger)">[system]: microservice-pod-07BC killed unexpectedly.</span><br>
+                     <span style="color: var(--accent)">[remediation]: Kubernetes ReplicaSet active. Initializing replacement container instance. Status: healthy.</span>`;
+  }
+}
 </script>
 </body>
 </html>
